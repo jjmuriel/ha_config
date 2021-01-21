@@ -1,0 +1,514 @@
+{
+    "version": 1,
+    "key": "lovelace.lovelace_plano",
+    "data": {
+        "config": {
+            "title": "Plano de control",
+            "views": [
+                {
+                    "title": "Plano",
+                    "path": "plano",
+                    "icon": "mdi:floor-plan",
+                    "panel": true,
+                    "visible": [
+                        {
+                            "user": "41d583e98ad44fcb815eddd81c7762d2"
+                        },
+                        {
+                            "user": "6fadf018db894713af1eff14127e966e"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "picture-elements",
+                            "elements": [
+                                {
+                                    "type": "state-label",
+                                    "entity": "input_select.control_apartamento",
+                                    "title": "Control Apartamento",
+                                    "style": {
+                                        "top": "2%",
+                                        "left": "15%",
+                                        "font-size": "20px",
+                                        "color": "black",
+                                        "font-weight": "bold"
+                                    },
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "tts.google_translate_say",
+                                        "service_data": {
+                                            "entity_id": "media_player.altavoces_apartamento",
+                                            "message": "Bienvenido al control del apartamento de la familia Muriel Ardila.",
+                                            "language": "es"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "state-label",
+                                    "entity": "input_select.entrada",
+                                    "title": "Entrada",
+                                    "style": {
+                                        "top": "9%",
+                                        "left": "40%",
+                                        "font-size": "10px",
+                                        "color": "blue",
+                                        "font-weight": "bold"
+                                    },
+                                    "tap_action": {
+                                        "action": "none"
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:lightbulb-group",
+                                    "style": {
+                                        "top": "8%",
+                                        "left": "5%",
+                                        "color": "black",
+                                        "--mdc-icon-size": "60px"
+                                    },
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "light.turn_off",
+                                        "service_data": {
+                                            "entity_id": "all"
+                                        },
+                                        "confirmation": {
+                                            "text": "\u00bfDesea apagar todas las luces?"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:alarm-bell",
+                                    "style": {
+                                        "top": "8%",
+                                        "left": "12%",
+                                        "color": "red",
+                                        "--mdc-icon-size": "60px"
+                                    },
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "alarm_control_panel.alarm_arm_away",
+                                        "service_data": {
+                                            "entity_id": "alarm_control_panel.alarma_apartamento"
+                                        },
+                                        "confirmation": {
+                                            "text": "\u00bfDesea activar la alarma?"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "entity": "lock.schlage_connect_smart_deadbolt_locked",
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "lock.lock",
+                                        "service_data": {
+                                            "entity_id": "lock.schlage_connect_smart_deadbolt_locked"
+                                        }
+                                    },
+                                    "style": {
+                                        "top": "15%",
+                                        "left": "42%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_comedor",
+                                    "style": {
+                                        "top": "11%",
+                                        "left": "53%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_ducha_principal",
+                                    "style": {
+                                        "top": "55%",
+                                        "left": "22%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_bano_principal",
+                                    "style": {
+                                        "top": "61%",
+                                        "left": "31%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_bano_social",
+                                    "style": {
+                                        "top": "52%",
+                                        "left": "50%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "switch.luz_indirecta_salacomedor",
+                                    "style": {
+                                        "top": "3%",
+                                        "left": "89%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.lampara_juan_jose",
+                                    "style": {
+                                        "top": "96%",
+                                        "left": "8%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.lampara_erika",
+                                    "style": {
+                                        "top": "96%",
+                                        "left": "32%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_cuarto_principal",
+                                    "style": {
+                                        "top": "80%",
+                                        "left": "18%",
+                                        "--mdc-icon-size": "60px"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.bombillo_estudio",
+                                    "style": {
+                                        "top": "97%",
+                                        "left": "67%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_cuarto_lucianita",
+                                    "style": {
+                                        "top": "38%",
+                                        "left": "67%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_indirecta_escritorio",
+                                    "style": {
+                                        "top": "96%",
+                                        "left": "85%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.lampara_escritorio",
+                                    "style": {
+                                        "top": "95%",
+                                        "left": "71%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_pasillo",
+                                    "style": {
+                                        "top": "50%",
+                                        "left": "41%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.bombillo_cocina",
+                                    "style": {
+                                        "top": "26%",
+                                        "left": "31%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_lavadero",
+                                    "style": {
+                                        "top": "30%",
+                                        "left": "10%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_bano_empleada",
+                                    "style": {
+                                        "top": "39%",
+                                        "left": "25%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_cuarto_empleada",
+                                    "style": {
+                                        "top": "51%",
+                                        "left": "10%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_hornos",
+                                    "style": {
+                                        "top": "17%",
+                                        "left": "28%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_lavaplatos",
+                                    "style": {
+                                        "top": "34%",
+                                        "left": "24%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "light.luz_sala_tv",
+                                    "style": {
+                                        "top": "78%",
+                                        "left": "40%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "switch.shelly_lavadora_relay_0",
+                                    "style": {
+                                        "top": "18%",
+                                        "left": "12%",
+                                        "--mdc-icon-size": "40px"
+                                    }
+                                },
+                                {
+                                    "type": "state-label",
+                                    "entity": "sensor.multisensor_6_air_temperature",
+                                    "style": {
+                                        "top": "25%",
+                                        "left": "45%",
+                                        "font-size": "17px",
+                                        "color": "blue"
+                                    }
+                                },
+                                {
+                                    "type": "image",
+                                    "entity": "camera.ndb313_w_mainstream",
+                                    "camera_image": "camera.ndb313_w_mainstream",
+                                    "style": {
+                                        "top": "10%",
+                                        "left": "32%",
+                                        "width": "4%",
+                                        "border": "1px solid blue",
+                                        "border-radius": "10%"
+                                    }
+                                },
+                                {
+                                    "type": "image",
+                                    "entity": "camera.camara_sala_de_tv",
+                                    "camera_image": "camera.camara_sala_de_tv",
+                                    "style": {
+                                        "top": "97%",
+                                        "left": "40%",
+                                        "width": "4%",
+                                        "border": "1px solid green",
+                                        "border-radius": "10%"
+                                    }
+                                },
+                                {
+                                    "type": "image",
+                                    "entity": "camera.amcrest_mediaprofile_channel1_mainstream",
+                                    "camera_image": "camera.amcrest_mediaprofile_channel1_mainstream",
+                                    "style": {
+                                        "top": "34%",
+                                        "left": "86%",
+                                        "width": "4%",
+                                        "border": "1px solid green",
+                                        "border-radius": "10%"
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:cactus",
+                                    "entity": "plant.cactus",
+                                    "style": {
+                                        "top": "33%",
+                                        "left": "92%",
+                                        "color": "green",
+                                        "--mdc-icon-size": "60px"
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:sprout",
+                                    "entity": "plant.tronco_de_la_felicidad",
+                                    "style": {
+                                        "top": "33%",
+                                        "left": "50%",
+                                        "color": "green",
+                                        "--mdc-icon-size": "60px"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "switch.shelly_ventilador_salacomedor",
+                                    "style": {
+                                        "top": "33%",
+                                        "left": "55%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "switch.shelly_ventilador_cuarto_principal",
+                                    "style": {
+                                        "top": "80%",
+                                        "left": "5%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "switch.extension",
+                                    "style": {
+                                        "top": "65%",
+                                        "left": "75%"
+                                    }
+                                },
+                                {
+                                    "type": "state-icon",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "switch.broadlink_sp3s_15a_switch",
+                                    "style": {
+                                        "top": "85%",
+                                        "left": "87%"
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:power-settings",
+                                    "entity": "group.multimedia_salacomedor",
+                                    "style": {
+                                        "top": "33%",
+                                        "left": "74%",
+                                        "color": "lightblue",
+                                        "--mdc-icon-size": "30px"
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:power-settings",
+                                    "entity": "group.multimedia_salatv",
+                                    "style": {
+                                        "top": "88%",
+                                        "left": "40%",
+                                        "color": "lightblue",
+                                        "--mdc-icon-size": "30px"
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:power-settings",
+                                    "entity": "switch.toma_izquierdo_habitacion_principal",
+                                    "style": {
+                                        "top": "67%",
+                                        "left": "21%",
+                                        "color": "lightblue",
+                                        "--mdc-icon-size": "30px"
+                                    }
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "mdi:power-settings",
+                                    "entity": "switch.toma_tv_estudio",
+                                    "style": {
+                                        "top": "97%",
+                                        "left": "76%",
+                                        "color": "lightblue",
+                                        "--mdc-icon-size": "30px"
+                                    }
+                                }
+                            ],
+                            "image": "/local/floorplan/plano2d.png"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,276 @@
+# Toma de pared habitacion (PS-1607)
+#    Lado del Google Home Mini
+  - platform: mqtt
+    name: "Toma TV cuarto Principal"
+    state_topic: "tele/ps1607/STATE"
+    value_template: "{{ value_json.POWER2 }}"
+    command_topic: "cmnd/ps1607/POWER2"
+    availability_topic: "tele/ps1607/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+#    Lado para uso cotidiano 
+  - platform: mqtt
+    name: "Toma derecho cuarto principal"
+    state_topic: "tele/ps1607/STATE"
+    value_template: "{{ value_json.POWER1 }}"
+    command_topic: "cmnd/ps1607/POWER1"
+    availability_topic: "tele/ps1607/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+#    Toma Data Center
+  - platform: mqtt
+    name: "Toma Data Center"
+    state_topic: "tele/TGWF15RM_Data_Center/STATE"
+    value_template: "{{ value_json.POWER }}"
+    command_topic: "cmnd/TGWF15RM_Data_Center/POWER"
+    availability_topic: "tele/TGWF15RM_Data_Center/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+# Sonoff Basic
+  - platform: mqtt
+    name: "Extension"
+    state_topic: "tele/switch-sb1/STATE"
+    value_template: "{{ value_json.POWER }}"
+    command_topic: "cmnd/switch-sb1/POWER"
+    availability_topic: "tele/switch-sb1/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+    
+# Sonoff S26
+  - platform: mqtt
+    name: "Toma TV Estudio"
+    state_topic: "tele/sonoff-s26/STATE"
+    value_template: "{{ value_json.POWER }}"
+    command_topic: "cmnd/sonoff-s26/POWER"
+    availability_topic: "tele/sonoff-s26/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+# Multitoma Heyvalue Salacomedor
+  - platform: mqtt
+    name: "Toma1 HDD Salacomedor"
+    state_topic: "tele/multitoma2/STATE"
+    value_template: "{{ value_json.POWER1 }}"
+    command_topic: "cmnd/multitoma2/POWER1"
+    availability_topic: "tele/multitoma2/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+  - platform: mqtt
+    name: "Toma2 deco Salacomedor"
+    state_topic: "tele/multitoma2/STATE"
+    value_template: "{{ value_json.POWER2 }}"
+    command_topic: "cmnd/multitoma2/POWER2"
+    availability_topic: "tele/multitoma2/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+  - platform: mqtt
+    name: "Toma3 TV Salacomedor"
+    state_topic: "tele/multitoma2/STATE"
+    value_template: "{{ value_json.POWER3 }}"
+    command_topic: "cmnd/multitoma2/POWER3"
+    availability_topic: "tele/multitoma2/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+  - platform: mqtt
+    name: "Toma4 Chromecast Salacomedor"
+    state_topic: "tele/multitoma2/STATE"
+    value_template: "{{ value_json.POWER4 }}"
+    command_topic: "cmnd/multitoma2/POWER4"
+    availability_topic: "tele/multitoma2/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+  - platform: mqtt
+    name: "TomaUSB Sala"
+    state_topic: "tele/multitoma2/STATE"
+    value_template: "{{ value_json.POWER5 }}"
+    command_topic: "cmnd/multitoma2/POWER5"
+    availability_topic: "tele/multitoma2/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+# Multitoma Heyvalue Sala de TV
+  - platform: mqtt
+    name: "Toma1 AP Sala de TV"
+    state_topic: "tele/hlt331_salatv/STATE"
+    value_template: "{{ value_json.POWER1 }}"
+    command_topic: "cmnd/hlt331_salatv/POWER1"
+    availability_topic: "tele/hlt331_salatv/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+  - platform: mqtt
+    name: "Toma2 Deco Sala de TV"
+    state_topic: "tele/hlt331_salatv/STATE"
+    value_template: "{{ value_json.POWER2 }}"
+    command_topic: "cmnd/hlt331_salatv/POWER2"
+    availability_topic: "tele/hlt331_salatv/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+  - platform: mqtt
+    name: "Toma3 TV Sala de TV"
+    state_topic: "tele/hlt331_salatv/STATE"
+    value_template: "{{ value_json.POWER3 }}"
+    command_topic: "cmnd/hlt331_salatv/POWER3"
+    availability_topic: "tele/hlt331_salatv/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+  - platform: mqtt
+    name: "Toma4 MiBox Sala de TV"
+    state_topic: "tele/hlt331_salatv/STATE"
+    value_template: "{{ value_json.POWER4 }}"
+    command_topic: "cmnd/hlt331_salatv/POWER4"
+    availability_topic: "tele/hlt331_salatv/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+  - platform: mqtt
+    name: "TomaUSB Broadlink Mini Sala de TV"
+    state_topic: "tele/hlt331_salatv/STATE"
+    value_template: "{{ value_json.POWER5 }}"
+    command_topic: "cmnd/hlt331_salatv/POWER5"
+    availability_topic: "tele/hlt331_salatv/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+    
+# Multitoma Gosund Salacomedor
+  - platform: mqtt
+# Puertos USB  
+    name: "TomaUSB Regleta Gosund"
+    state_topic: "tele/Gosund_multitoma/STATE"
+    value_template: "{{ value_json.POWER1 }}"
+    command_topic: "cmnd/Gosund_multitoma/POWER1"
+    availability_topic: "tele/Gosund_multitoma/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+  - platform: mqtt
+  # Nintendo Switch
+    name: "Toma1 Regleta Gosund"
+    state_topic: "tele/Gosund_multitoma/STATE"
+    value_template: "{{ value_json.POWER2 }}"
+    command_topic: "cmnd/Gosund_multitoma/POWER2"
+    availability_topic: "tele/Gosund_multitoma/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+  - platform: mqtt
+  # Playstation4
+    name: "Toma2 Regleta Gosund"
+    state_topic: "tele/Gosund_multitoma/STATE"
+    value_template: "{{ value_json.POWER3 }}"
+    command_topic: "cmnd/Gosund_multitoma/POWER3"
+    availability_topic: "tele/Gosund_multitoma/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+  - platform: mqtt
+  # Tira Led RGB TV Salacomedor
+    name: "Toma3 Regleta Gosund"
+    state_topic: "tele/Gosund_multitoma/STATE"
+    value_template: "{{ value_json.POWER4 }}"
+    command_topic: "cmnd/Gosund_multitoma/POWER4"
+    availability_topic: "tele/Gosund_multitoma/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+    
+# Sonoff Basic Google Hub
+  - platform: mqtt
+    name: "Extensión Google Hub"
+    state_topic: "tele/sonoff-google_hub/STATE"
+    value_template: "{{ value_json.POWER }}"
+    command_topic: "cmnd/sonoff-google_hub/POWER"
+    availability_topic: "tele/sonoff-google_hub/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+ 
+ # Switches de plantilla (template)   
+#  - platform: template
+#    switches:
+#      luz_ind:
+#        friendly_name: "Conmutar luz indirecta salcomedor"
+#        value_template: "{{ is_state('script.1584804493297', 'on') }}"
+#        turn_on:
+#          service: script.turn_on
+#          entity_id: script.1584804493297
+#        turn_off:
+#          service: switch.turn_off
+#          entity_id: switch.luz_indirecta_salacomedor
+          
+

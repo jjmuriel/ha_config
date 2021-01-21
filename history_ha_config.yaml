@@ -1,0 +1,9 @@
+  use_include_order: true
+  include:
+    domains:
+      - sensor
+
+  exclude:
+    entities:
+      - sensor.aeon_labs_zw100_multisensor_6_ultraviolet
+      - sensor.shelly_shsw_pm_004d3d_cloud_status_attr

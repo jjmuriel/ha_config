@@ -1,0 +1,19 @@
+# Atributo de toma Broadlink SP3
+  - platform: template
+    sensors:
+      rig_pow:
+        friendly_name: "Potencia Switch Broadlink"
+        value_template: "{{ states.switch.broadlink_sp3s_15a_switch.attributes.current_power_w }}"
+        unit_of_measurement: 'W'
+
+# Sensores para calcular tarifa de energía
+#  - platform: template
+#    sensors:
+#      daily_power:
+#        friendly_name: "Consumo energía diario"
+#        unit_of_measurement: 'COP $'
+#        value_template: "{{ (states('sensor.daily_energy_standard') | float * 17.28) | round(2) }}"
+#      monthly_power:
+#        friendly_name: "Consumo energía mensual"
+#        unit_of_measurement: 'COP $'
+#        value_template: "{{ (states('sensor.monthly_energy_standard') | float * 535.6) | round(2) }}"

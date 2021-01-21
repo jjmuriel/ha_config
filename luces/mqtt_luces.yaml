@@ -1,0 +1,278 @@
+  - platform: mqtt
+    name: "Luz Comedor"
+    state_topic: "tele/mj_dimmer1/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/mj_dimmer1/POWER"
+    availability_topic: "tele/mj_dimmer1/LWT"
+    brightness_state_topic: "tele/mj_dimmer1/STATE"
+    brightness_command_topic: "cmnd/mj_dimmer1/Dimmer"
+    brightness_scale: 100
+    on_command_type: "brightness"
+    brightness_value_template: "{{ value_json.Dimmer }}"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+    
+  - platform: mqtt
+    name: "Luz Sala TV"
+    state_topic: "tele/mj_dimmer_salatv/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/mj_dimmer_salatv/POWER"
+    availability_topic: "tele/mj_dimmer_salatv/LWT"
+    brightness_state_topic: "tele/mj_dimmer_salatv/STATE"
+    brightness_command_topic: "cmnd/mj_dimmer_salatv/Dimmer"
+    brightness_scale: 100
+    on_command_type: "brightness"
+    brightness_value_template: "{{ value_json.Dimmer }}"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+
+  - platform: mqtt
+    name: "Bombillo Estudio"
+    state_topic: "tele/mjs01_Estudio/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/mjs01_Estudio/POWER"
+    availability_topic: "tele/mjs01_Estudio/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+  - platform: mqtt
+    name: "Luz Baño Principal"
+    state_topic: "tele/mjs01_ban_ppal/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/mjs01_ban_ppal/POWER"
+    availability_topic: "tele/mjs01_ban_ppal/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+    
+  - platform: mqtt
+    name: "Luz Ducha Principal"
+    state_topic: "tele/Sonoff-Mini_bano_ppal/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/Sonoff-Mini_bano_ppal/POWER"
+    availability_topic: "tele/Sonoff-Mini_bano_ppal/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+  - platform: mqtt
+    name: "Luz Cuarto Lucianita"
+    state_topic: "tele/mjs01_Lucianita/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/mjs01_Lucianita/POWER"
+    availability_topic: "tele/mjs01_Lucianita/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+  - platform: mqtt
+    name: "Luz Baño Social"
+    state_topic: "tele/mjst01_Bano_social/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/mjst01_Bano_social/POWER"
+    availability_topic: "tele/mjst01_Bano_social/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+  - platform: mqtt
+    name: "Bombillo Cocina"
+    state_topic: "tele/mjs01_Cocina/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/mjs01_Cocina/POWER"
+    availability_topic: "tele/mjs01_Cocina/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+  - platform: mqtt
+    name: "Luz Hornos"
+    state_topic: "tele/sonoff_basic_hornos/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/sonoff_basic_hornos/POWER"
+    availability_topic: "tele/sonoff_basic_hornos/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+  - platform: mqtt
+    name: "Luz Lavaplatos"
+    state_topic: "tele/sonoff-basic_lavaplatos/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/sonoff-basic_lavaplatos/POWER"
+    availability_topic: "tele/sonoff-basic_lavaplatos/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+  - platform: mqtt
+    name: "Luz Pasillo"
+    state_topic: "tele/mjst01_Pasillo/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/mjst01_Pasillo/POWER"
+    availability_topic: "tele/mjst01_Pasillo/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+  - platform: mqtt
+    name: "Luz Lavadero"
+    state_topic: "tele/mjs01__lavadero/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/mjs01__lavadero/POWER"
+    availability_topic: "tele/mjs01__lavadero/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+  - platform: mqtt
+    name: "Luz Cuarto Empleada"
+    state_topic: "tele/mjs01__cto_empleada/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/mjs01__cto_empleada/POWER"
+    availability_topic: "tele/mjs01__cto_empleada/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+  - platform: mqtt
+    name: "Luz Baño Empleada"
+    state_topic: "tele/sonoff_mini_empleada/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/sonoff_mini_empleada/POWER"
+    availability_topic: "tele/sonoff_mini_empleada/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+ # Gosund WP3 No1 - Lampara Erika
+  - platform: mqtt
+    name: "Lámpara Erika"
+    state_topic: "tele/Gosund_WP3_Erika/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/Gosund_WP3_Erika/POWER"
+    availability_topic: "tele/Gosund_WP3_Erika/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+    # Gosund WP3 No3 - Lampara Juan Jose
+  - platform: mqtt
+    name: "Lámpara Juan José"
+    state_topic: "tele/Gosund_WP3_JJ/STATE"
+    value_template: "{{value_json.POWER}}"
+    command_topic: "cmnd/Gosund_WP3_JJ/POWER"
+    availability_topic: "tele/Gosund_WP3_JJ/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+  - platform: mqtt
+    name: "Luz Indirecta Escritorio"
+    state_topic: "tele/Gosund_WP3_Sala/STATE"
+    value_template: "{{ value_json.POWER }}"
+    command_topic: "cmnd/Gosund_WP3_Sala/POWER"
+    availability_topic: "tele/Gosund_WP3_Sala/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+  - platform: mqtt
+    name: "Lámpara escritorio"
+    state_topic: "tele/sonoff-lamp-estudio/STATE"
+    value_template: "{{ value_json.POWER }}"
+    command_topic: "cmnd/sonoff-lamp-estudio/POWER"
+    availability_topic: "tele/sonoff-lamp-estudio/LWT"
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+
+  - platform: mqtt
+    name: "Tira led RGB"
+    command_topic: "cmnd/led_controller/POWER"
+    state_topic: "tele/led_controller/STATE"
+    state_value_template: "{{ value_json.POWER }}"
+    availability_topic: "tele/led_controller/LWT"
+    brightness_command_topic: "cmnd/led_controller/Dimmer"
+    brightness_state_topic: "tele/led_controller/STATE"
+    brightness_scale: 100
+    on_command_type: "brightness"
+    brightness_value_template: "{{ value_json.Dimmer }}"
+    rgb_command_topic: "cmnd/led_controller/Color2"
+    rgb_state_topic: "tele/led_controller/STATE"
+    rgb_value_template: "{{ value_json.Color.split(',')[0:3]|join(',') }}"
+    effect_command_topic: "cmnd/led_controller/Scheme"
+    effect_state_topic: "tele/led_controller/STATE"
+    effect_value_template: "{{ value_json.Scheme }}"
+    effect_list:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    qos: 1
+    retain: false
+    
+
+

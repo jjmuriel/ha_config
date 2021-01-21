@@ -1,0 +1,164 @@
+# Sensores de tomas con medidor
+
+# Toma Salacomedor (Data Center)
+  - platform: mqtt
+    name: "Voltaje DC"
+    state_topic: "tele/TGWF15RM_Data_Center/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Voltage }}"
+    unit_of_measurement: "V"
+  - platform: mqtt
+    name: "Corriente DC"
+    state_topic: "tele/TGWF15RM_Data_Center/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Current }}"
+    unit_of_measurement: "A"
+  - platform: mqtt
+    name: "Potencia DC"
+    state_topic: "tele/TGWF15RM_Data_Center/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Power }}"
+    unit_of_measurement: "W"
+  - platform: mqtt
+    name: "Factor de Potencia DC"
+    state_topic: "tele/TGWF15RM_Data_Center/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Factor}}"
+    unit_of_measurement: ""
+  - platform: mqtt
+    name: "Energía hoy DC"
+    state_topic: "tele/TGWF15RM_Data_Center/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Today }}"
+    unit_of_measurement: "kWh"
+  - platform: mqtt
+    name: "Energía Ayer DC"
+    state_topic: "tele/TGWF15RM_Data_Center/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Yesterday }}"
+    unit_of_measurement: "kWh"
+  - platform: mqtt
+    name: "Energia Total DC"
+    state_topic: "tele/TGWF15RM_Data_Center/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Total }}"
+    unit_of_measurement: "kWh"
+
+# Toma consumo nevera    
+  - platform: mqtt
+    name: "Voltaje Nevera"
+    state_topic: "tele/TGWF15RM_Nevera/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Voltage }}"
+    unit_of_measurement: "V"
+  - platform: mqtt
+    name: "Corriente Nevera"
+    state_topic: "tele/TGWF15RM_Nevera/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Current }}"
+    unit_of_measurement: "A"
+  - platform: mqtt
+    name: "Potencia Nevera"
+    state_topic: "tele/TGWF15RM_Nevera/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Power }}"
+    unit_of_measurement: "W"
+  - platform: mqtt
+    name: "Factor de Potencia Nevera"
+    state_topic: "tele/TGWF15RM_Nevera/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Factor}}"
+    unit_of_measurement: ""
+  - platform: mqtt
+    name: "Energía hoy Nevera"
+    state_topic: "tele/TGWF15RM_Nevera/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Today }}"
+    unit_of_measurement: "kWh"
+  - platform: mqtt
+    name: "Energía Ayer Nevera"
+    state_topic: "tele/TGWF15RM_Nevera/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Yesterday }}"
+    unit_of_measurement: "kWh"
+  - platform: mqtt
+    name: "Energia Total Nevera"
+    state_topic: "tele/TGWF15RM_Nevera/SENSOR"
+    value_template: "{{ value_json['ENERGY'].Total }}"
+    unit_of_measurement: "kWh"
+
+#  - platform: mqtt
+#    name: "SalaTV Power"
+#    state_topic: "tele/mj_dimmer_salatv/STATE"
+#    value_template: "{{ value_json.POWER }}"
+#    availability_topic: "tele/mj_dimmer_salatv/LWT"
+#    payload_available: "Online"
+#    payload_not_available: "Offline"
+#  - platform: mqtt
+#    name: "SalaTV dimming"
+#    state_topic: "tele/mj_dimmer_salatv/STATE"
+#    value_template: "{{ value_json.Dimmer }}"
+#    availability_topic: "tele/mj_dimmer_salatv/LWT"
+#    payload_available: "Online"
+#    payload_not_available: "Offline"
+    
+  # - platform: darksky
+  #   api_key: !secret darksky_api_key
+  #   forecast:
+  #     - 1
+  #     - 2
+  #     - 3
+  #     - 4
+  #     - 5
+  #   monitored_conditions:
+  #     - icon
+  #     - summary
+  #     - nearest_storm_distance
+  #     - nearest_storm_bearing
+  #     - humidity
+  #     - temperature
+  #     - temperature_high
+  #     - temperature_low
+  #     - apparent_temperature
+  #     - apparent_temperature_high
+  #     - apparent_temperature_low
+  #     - wind_speed
+  #     - wind_bearing
+  #     - precip_type
+  #     - precip_probability
+  #     - precip_accumulation
+  #     - precip_intensity
+  #     - precip_intensity_max
+  #     - uv_index
+  #     - daily_summary
+  #     - pressure
+  #     - visibility
+  #   scan_interval:
+  #     minutes: 5
+
+
+  # - platform: nut
+  #   name: Tripp Lite SMART 1000LCD UPS
+  #   host:  XXX
+  #   port: 3493
+  #   alias: smart1000lcd
+  #   username: !secret nut_usr
+  #   password: !secret nut_pass
+  #   resources:
+  #     - ups.status.display
+  #     - ups.status
+  #     - input.voltage
+  #     - battery.charge
+  #     - battery.runtime
+
+  # - platform: miflora
+  #   mac: 'XXX'
+  #   name: Tronco de la Felicidad
+  #   force_update: true
+  #   median: 3
+  #   monitored_conditions:
+  #     - moisture
+  #     - light
+  #     - temperature
+  #     - conductivity
+  #     - battery
+  # - platform: miflora
+  #   mac: 'XXX'
+  #   name: Cactus
+  #   force_update: true
+  #   median: 3
+  #   monitored_conditions:
+  #     - moisture
+  #     - light
+  #     - temperature
+  #     - conductivity
+  #     - battery
+
+

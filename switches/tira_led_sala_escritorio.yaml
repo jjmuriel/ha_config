@@ -1,0 +1,73 @@
+# Luz indirecta Escritorio
+  - platform: mqtt
+    name: "ON Tira Led Escritorio"
+    command_topic: "cmnd/bridgerf/rfcode"
+    availability_topic: "tele/bridgerf/LWT"
+    payload_on: "#280F01"
+    payload_off: "#280F01"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+  - platform: mqtt
+    name: "OFF Tira Led Escritorio"
+    command_topic: "cmnd/bridgerf/rfcode"
+    availability_topic: "tele/bridgerf/LWT"
+    payload_on: "#280F03"
+    payload_off: "#280F03"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+  - platform: mqtt
+    name: "MAS Tira Led Escritorio"
+    command_topic: "cmnd/bridgerf/rfcode"
+    availability_topic: "tele/bridgerf/LWT"
+    payload_on: "#280F07"
+    payload_off: "#280F07"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+  - platform: mqtt
+    name: "MENOS Tira Led Escritorio"
+    command_topic: "cmnd/bridgerf/rfcode"
+    availability_topic: "tele/bridgerf/LWT"
+    payload_on: "#280F09"
+    payload_off: "#280F09"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+  - platform: mqtt
+    name: "25% Tira Led Escritorio"
+    command_topic: "cmnd/bridgerf/rfcode"
+    availability_topic: "tele/bridgerf/LWT"
+    payload_on: "#280F0D"
+    payload_off: "#280F0D"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+  - platform: mqtt
+    name: "50% Tira Led Escritorio"
+    command_topic: "cmnd/bridgerf/rfcode"
+    availability_topic: "tele/bridgerf/LWT"
+    payload_on: "#280F0F"
+    payload_off: "#280F0F"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+  - platform: mqtt
+    name: "75% Tira Led Escritorio"
+    command_topic: "cmnd/bridgerf/rfcode"
+    availability_topic: "tele/bridgerf/LWT"
+    payload_on: "#280F13"
+    payload_off: "#280F13"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+  - platform: mqtt
+    name: "100% Tira Led Escritorio"
+    command_topic: "cmnd/bridgerf/rfcode"
+    availability_topic: "tele/bridgerf/LWT"
+    payload_on: "#280F15"
+    payload_off: "#280F15"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false

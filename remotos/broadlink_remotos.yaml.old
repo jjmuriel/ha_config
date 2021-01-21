@@ -1,0 +1,11 @@
+# Remotos de Broadlink
+  - platform: broadlink
+    host: "XXX"
+    mac: "XXX"
+    timeout: 15
+    name: "Broadlink RM Pro Plus"
+  - platform: broadlink
+    host: "XXX"
+    mac: "XXX"
+    timeout: 15
+    name: "Broadlink RM Mini"

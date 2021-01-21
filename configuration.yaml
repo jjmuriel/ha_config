@@ -1,0 +1,97 @@
+
+frontend:
+  themes: !include_dir_merge_named themes
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Mi Hogar
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitud
+  longitude: !secret longitud
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret elevacion
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Bogota
+  external_url: !secret ha_url
+  internal_url: 'https://homeassistant.local:8123'
+  customize: !include customize.yaml
+# Configure a default setup of Home Assistant (frontend, api, etc)
+  allowlist_external_dirs:
+    - /config
+  media_dirs:
+    media: /media
+  packages: !include_dir_named packages
+
+logger:
+  default: warning
+
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+    base_url: !secret ha_url
+
+# Integración con Google Assistant
+google_assistant: !include google_assistant.yaml
+
+# Soporte para DDNS y SSL con DuckDNS
+http:
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem 
+#  base_url: !secret url_duckdns      # Deprecated
+
+alarm_control_panel:
+  - platform: manual
+    name: Alarma Apartamento
+    code: !secret alarm_code
+    code_arm_required: false
+    arming_time: 30
+    delay_time: 50
+    trigger_time: 4
+    disarmed:
+      trigger_time: 0
+    armed_home:
+      arming_time: 0
+      delay_time: 0
+      
+notify:
+  - platform: telegram
+    name: "Juan José"
+    chat_id: !secret telegram_chat_id_jjma
+
+telegram_bot:
+  - platform: webhooks
+    api_key: !secret telegram_key
+ # Para que webhook funcione es importante configurar externo el puerto 80, 443 o 8443
+ # apuntando al puerto interno de HA   
+    url: !secret telegram_webhook_url
+    allowed_chat_ids:
+      - !secret telegram_chat_id_jjma
+
+wake_on_lan:
+
+switch: !include_dir_merge_list switches
+light: !include_dir_merge_list luces
+#remote: !include_dir_merge_list remotos  # Obsoleto, ahora por GUI
+#automation: !include_dir_merge_list automations
+automation: !include automations.yaml
+
+binary_sensor: !include_dir_merge_list binary_sensors
+sensor: !include_dir_merge_list sensors
+camera: !include_dir_merge_list camaras
+webostv: !include lg_webos_tvs.yaml
+media_player: !include media_players.yaml
+tplink: !include tplink.yaml
+
+
+#input_select: !include input_select.yaml
+timer: !include timers.yaml
+input_boolean: !include input_booleans.yaml
+recorder: !include db_ha_config.yaml
+history: !include history_ha_config.yaml
+plant: !include plantas.yaml
+group: !include groups.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml

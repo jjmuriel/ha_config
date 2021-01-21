@@ -1,0 +1,3 @@
+  bloqueo_cerradura:
+    duration: '00:00:45'
+    icon: mdi:lock-clock

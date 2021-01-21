@@ -1,0 +1,1360 @@
+{
+    "version": 1,
+    "key": "lovelace",
+    "data": {
+        "config": {
+            "title": "Automatizaci\u00f3n Hogar",
+            "views": [
+                {
+                    "path": "inicio",
+                    "title": "Inicio",
+                    "icon": "mdi:home",
+                    "visible": [
+                        {
+                            "user": "6fadf018db894713af1eff14127e966e"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "hold_action": {
+                                "action": "more-info"
+                            },
+                            "icon_height": "50px",
+                            "name": "Cerradura",
+                            "show_icon": true,
+                            "show_name": true,
+                            "show_state": false,
+                            "tap_action": {
+                                "action": "toggle"
+                            },
+                            "type": "button",
+                            "entity": "lock.schlage_connect_smart_deadbolt_locked"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "switch.siren_gen5_switch"
+                                }
+                            ],
+                            "title": "Alama"
+                        },
+                        {
+                            "type": "alarm-panel",
+                            "states": [
+                                "arm_home",
+                                "arm_away"
+                            ],
+                            "entity": "alarm_control_panel.alarma_apartamento",
+                            "name": "Alarma"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "switch.lg_tv_salacomedor"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "path": "luces",
+                    "title": "Luces",
+                    "icon": "mdi:lightbulb-multiple",
+                    "visible": [
+                        {
+                            "user": "6fadf018db894713af1eff14127e966e"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.luz_comedor"
+                                }
+                            ],
+                            "title": "Salacomedor",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.luz_pasillo"
+                                }
+                            ],
+                            "title": "Zonas comunes",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.luz_cuarto_principal"
+                                },
+                                {
+                                    "entity": "light.lampara_erika"
+                                },
+                                {
+                                    "entity": "light.lampara_juan_jose"
+                                },
+                                {
+                                    "entity": "light.luz_bano_principal"
+                                },
+                                {
+                                    "entity": "light.luz_ducha_principal"
+                                }
+                            ],
+                            "title": "Habitaci\u00f3n principal",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.bombillo_estudio"
+                                },
+                                {
+                                    "entity": "light.luz_indirecta_escritorio"
+                                },
+                                {
+                                    "entity": "light.lampara_escritorio"
+                                }
+                            ],
+                            "title": "Estudio",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.bombillo_cocina"
+                                },
+                                {
+                                    "entity": "light.luz_lavadero"
+                                },
+                                {
+                                    "entity": "light.luz_hornos"
+                                },
+                                {
+                                    "entity": "light.luz_lavaplatos"
+                                }
+                            ],
+                            "title": "Cocina y lavadero",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.luz_sala_tv"
+                                }
+                            ],
+                            "title": "Sala de TV",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.luz_cuarto_empleada"
+                                },
+                                {
+                                    "entity": "light.luz_bano_empleada"
+                                }
+                            ],
+                            "title": "Cuarto empleada",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.luz_cuarto_lucianita"
+                                }
+                            ],
+                            "title": "Cuarto Luciana",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.luz_indirecta_escritorio"
+                                },
+                                {
+                                    "entity": "switch.mas_tira_led_escritorio"
+                                },
+                                {
+                                    "entity": "switch.menos_tira_led_escritorio"
+                                },
+                                {
+                                    "entity": "switch.100_tira_led_escritorio"
+                                },
+                                {
+                                    "entity": "switch.75_tira_led_escritorio"
+                                },
+                                {
+                                    "entity": "switch.50_tira_led_escritorio"
+                                },
+                                {
+                                    "entity": "switch.25_tira_led_escritorio"
+                                }
+                            ],
+                            "title": "Luz Indirecta Escritorio",
+                            "type": "entities",
+                            "show_header_toggle": false,
+                            "state_color": true
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.luz_indirecta_salacomedor"
+                                },
+                                {
+                                    "entity": "switch.brillo_luz_indirecta_salacomedor"
+                                },
+                                {
+                                    "entity": "switch.brillo_luz_indirecta_al_100"
+                                },
+                                {
+                                    "entity": "switch.brillo_luz_indirecta_al_75"
+                                },
+                                {
+                                    "entity": "switch.brillo_luz_indirecta_al_50"
+                                },
+                                {
+                                    "entity": "switch.brillo_luz_indirecta_al_25"
+                                }
+                            ],
+                            "title": "Luz Indirecta Salacomedor",
+                            "type": "entities",
+                            "show_header_toggle": false
+                        },
+                        {
+                            "type": "light",
+                            "entity": "light.tira_led_rgb",
+                            "icon": "mdi:led-strip"
+                        }
+                    ]
+                },
+                {
+                    "path": "switches",
+                    "title": "Switches",
+                    "icon": "mdi:power-socket-us",
+                    "visible": [
+                        {
+                            "user": "6fadf018db894713af1eff14127e966e"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.toma1_hdd_salacomedor"
+                                },
+                                {
+                                    "entity": "switch.toma2_deco_salacomedor"
+                                },
+                                {
+                                    "entity": "switch.toma3_tv_salacomedor"
+                                },
+                                {
+                                    "entity": "switch.toma4_chromecast_salacomedor"
+                                },
+                                {
+                                    "entity": "switch.tomausb_sala"
+                                },
+                                {
+                                    "entity": "switch.toma1_regleta_gosund"
+                                },
+                                {
+                                    "entity": "switch.toma2_regleta_gosund"
+                                },
+                                {
+                                    "entity": "switch.toma3_regleta_gosund"
+                                },
+                                {
+                                    "entity": "switch.tomausb_regleta_gosund"
+                                },
+                                {
+                                    "entity": "switch.extension_google_hub"
+                                },
+                                {
+                                    "entity": "switch.toma_data_center"
+                                },
+                                {
+                                    "entity": "switch.shelly_ventilador_salacomedor"
+                                }
+                            ],
+                            "title": "Salacomedor",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.toma1_ap_sala_de_tv"
+                                },
+                                {
+                                    "entity": "switch.toma2_deco_sala_de_tv"
+                                },
+                                {
+                                    "entity": "switch.toma3_tv_sala_de_tv"
+                                },
+                                {
+                                    "entity": "switch.toma4_mibox_sala_de_tv"
+                                },
+                                {
+                                    "entity": "switch.tomausb_broadlink_mini_sala_de_tv"
+                                }
+                            ],
+                            "title": "Sala de TV",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.toma_tv_cuarto_principal"
+                                },
+                                {
+                                    "entity": "switch.toma_derecho_cuarto_principal"
+                                },
+                                {
+                                    "entity": "switch.shelly_ventilador_cuarto_principal"
+                                }
+                            ],
+                            "title": "Habitaci\u00f3n principal",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.toma_tv_estudio"
+                                },
+                                {
+                                    "entity": "switch.broadlink_sp3s_15a_switch"
+                                },
+                                {
+                                    "entity": "switch.toma_para_celular"
+                                }
+                            ],
+                            "title": "Estudio",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.shelly_lavadora_relay_0"
+                                },
+                                {
+                                    "entity": "switch.ewelink_sa_003_zigbee_100b441d_on_off"
+                                }
+                            ],
+                            "title": "Cocina y lavadero",
+                            "type": "entities"
+                        }
+                    ]
+                },
+                {
+                    "path": "multimedia",
+                    "title": "Multimedia",
+                    "icon": "mdi:play-network",
+                    "visible": [
+                        {
+                            "user": "6fadf018db894713af1eff14127e966e"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "media_player.altavoz_sala",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.altavoz_cocina",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.altavoz_estudio",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.habitacion_principal",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.chromecast_estudio",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.mibox4",
+                            "type": "media-control"
+                        },
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.tv_salacomedor_2"
+                        },
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.tv_cuarto_2"
+                        },
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.tv_sala_de_tv"
+                        },
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.ps4"
+                        }
+                    ]
+                },
+                {
+                    "path": "plantas",
+                    "title": "Plantas",
+                    "icon": "mdi:sprout",
+                    "visible": [
+                        {
+                            "user": "6fadf018db894713af1eff14127e966e"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "plant.tronco_de_la_felicidad",
+                            "name": "Tronco de la Felicidad",
+                            "type": "plant-status"
+                        },
+                        {
+                            "entity": "plant.cactus",
+                            "name": "Cactus",
+                            "type": "plant-status"
+                        }
+                    ]
+                },
+                {
+                    "path": "energia",
+                    "title": "Energ\u00eda",
+                    "icon": "mdi:current-ac",
+                    "visible": [
+                        {
+                            "user": "6fadf018db894713af1eff14127e966e"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "sensor.rig_pow",
+                            "graph": "line",
+                            "name": "Consumo toma ventilador estudio",
+                            "type": "sensor"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.voltaje_dc"
+                                },
+                                {
+                                    "entity": "sensor.corriente_dc"
+                                },
+                                {
+                                    "entity": "sensor.potencia_dc"
+                                },
+                                {
+                                    "entity": "sensor.factor_de_potencia_dc"
+                                },
+                                {
+                                    "entity": "sensor.energia_hoy_dc"
+                                },
+                                {
+                                    "entity": "sensor.energia_ayer_dc"
+                                },
+                                {
+                                    "entity": "sensor.energia_total_dc"
+                                }
+                            ],
+                            "title": "Data Center"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.voltaje_nevera"
+                                },
+                                {
+                                    "entity": "sensor.corriente_nevera"
+                                },
+                                {
+                                    "entity": "sensor.potencia_nevera"
+                                },
+                                {
+                                    "entity": "sensor.factor_de_potencia_nevera"
+                                },
+                                {
+                                    "entity": "sensor.energia_hoy_nevera"
+                                },
+                                {
+                                    "entity": "sensor.energia_ayer_nevera"
+                                },
+                                {
+                                    "entity": "sensor.energia_total_nevera"
+                                }
+                            ],
+                            "title": "Nevera"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "sensor.home_energy_meter_gen5_instance_1_electric_a",
+                                "sensor.home_energy_meter_gen5_instance_1_electric_v",
+                                "sensor.home_energy_meter_gen5_instance_1_electric_w",
+                                "sensor.home_energy_meter_gen5_instance_1_electric_kvar",
+                                "sensor.home_energy_meter_gen5_instance_1_electric_kvarh",
+                                "sensor.home_energy_meter_gen5_instance_1_electric_kwh"
+                            ],
+                            "title": "Energ\u00eda Total"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "sensor.home_energy_meter_gen5_instance_2_electric_a",
+                                "sensor.home_energy_meter_gen5_instance_2_electric_v",
+                                "sensor.home_energy_meter_gen5_instance_2_electric_w",
+                                "sensor.home_energy_meter_gen5_instance_2_electric_kvar",
+                                "sensor.home_energy_meter_gen5_instance_2_electric_kvarh",
+                                "sensor.home_energy_meter_gen5_instance_2_electric_kwh"
+                            ],
+                            "title": "Energia fase Izquierda"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "sensor.home_energy_meter_gen5_instance_3_electric_a",
+                                "sensor.home_energy_meter_gen5_instance_3_electric_v",
+                                "sensor.home_energy_meter_gen5_instance_3_electric_w",
+                                "sensor.home_energy_meter_gen5_instance_3_electric_kvar",
+                                "sensor.home_energy_meter_gen5_instance_3_electric_kvarh",
+                                "sensor.home_energy_meter_gen5_instance_3_electric_kwh"
+                            ],
+                            "title": "Energia fase Derecha"
+                        }
+                    ]
+                },
+                {
+                    "path": "sensores",
+                    "title": "Sensores",
+                    "icon": "mdi:motion-sensor",
+                    "visible": [
+                        {
+                            "user": "6fadf018db894713af1eff14127e966e"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.lumi_lumi_sensor_natgas_9cdf4904_ias_zone"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "type": "gauge",
+                            "min": 0,
+                            "max": 10000,
+                            "entity": "sensor.home_assistant_v2_db",
+                            "severity": {
+                                "green": 0,
+                                "yellow": 3000,
+                                "red": 5000
+                            }
+                        },
+                        {
+                            "type": "glance",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.pir_sala_de_tv"
+                                },
+                                {
+                                    "entity": "binary_sensor.eu_z_wave_door_window_sensor_access_control_door_window_open"
+                                },
+                                {
+                                    "entity": "binary_sensor.magnetico_cajon_escritorio"
+                                }
+                            ],
+                            "title": "Sensores de Alarma"
+                        },
+                        {
+                            "type": "entity",
+                            "entity": "sensor.cert_expiry_timestamp_parca_duckdns_org_8123",
+                            "name": "Certificado dominio HA"
+                        }
+                    ]
+                },
+                {
+                    "title": "entrada Codes and Configuration",
+                    "path": "keypad-entrada",
+                    "icon": "mdi:lock-smart",
+                    "panel": false,
+                    "visible": [
+                        {
+                            "user": "6fadf018db894713af1eff14127e966e"
+                        }
+                    ],
+                    "badges": [
+                        {
+                            "entity": "input_boolean.entrada_lock_notifications"
+                        },
+                        {
+                            "entity": "input_boolean.entrada_dooraccess_notifications"
+                        },
+                        {
+                            "entity": "lock.schlage_connect_smart_deadbolt_locked"
+                        },
+                        {
+                            "entity": "binary_sensor.eu_z_wave_door_window_sensor_sensor"
+                        },
+                        {
+                            "entity": "input_text.entrada_status_report"
+                        },
+                        {
+                            "entity": "input_boolean.allow_automation_execution"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "content": "## Code 1\n",
+                                    "type": "markdown"
+                                },
+                                {
+                                    "type": "entities",
+                                    "show_header_toggle": false,
+                                    "entities": [
+                                        {
+                                            "entity": "input_text.entrada_name_1"
+                                        },
+                                        {
+                                            "entity": "input_text.entrada_pin_1"
+                                        },
+                                        {
+                                            "entity": "input_boolean.enabled_entrada_1"
+                                        },
+                                        {
+                                            "entity": "input_boolean.notify_entrada_1"
+                                        },
+                                        {
+                                            "type": "divider"
+                                        },
+                                        {
+                                            "entity": "sensor.connected_entrada_1",
+                                            "state_color": true
+                                        },
+                                        {
+                                            "type": "custom:fold-entity-row",
+                                            "head": {
+                                                "type": "section",
+                                                "label": "Debug"
+                                            },
+                                            "open": false,
+                                            "entities": [
+                                                {
+                                                    "entity": "binary_sensor.active_entrada_1",
+                                                    "state_color": true
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "sensor.entrada_code_slot_1",
+                                                    "state_color": true
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "binary_sensor.pin_synched_entrada_1",
+                                                    "state_color": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "custom:fold-entity-row",
+                                            "head": {
+                                                "type": "section",
+                                                "label": "Advanced Options"
+                                            },
+                                            "entities": [
+                                                {
+                                                    "entity": "input_boolean.reset_codeslot_entrada_1"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "input_boolean.accesslimit_entrada_1"
+                                                },
+                                                {
+                                                    "entity": "input_number.accesscount_entrada_1"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "input_boolean.daterange_entrada_1"
+                                                },
+                                                {
+                                                    "entity": "input_datetime.start_date_entrada_1"
+                                                },
+                                                {
+                                                    "entity": "input_datetime.end_date_entrada_1"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.sun_entrada_1",
+                                                "input_boolean.sun_inc_entrada_1",
+                                                "input_datetime.sun_start_date_entrada_1",
+                                                "input_datetime.sun_end_date_entrada_1",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.mon_entrada_1",
+                                                "input_boolean.mon_inc_entrada_1",
+                                                "input_datetime.mon_start_date_entrada_1",
+                                                "input_datetime.mon_end_date_entrada_1",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.tue_entrada_1",
+                                                "input_boolean.tue_inc_entrada_1",
+                                                "input_datetime.tue_start_date_entrada_1",
+                                                "input_datetime.tue_end_date_entrada_1",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.wed_entrada_1",
+                                                "input_boolean.wed_inc_entrada_1",
+                                                "input_datetime.wed_start_date_entrada_1",
+                                                "input_datetime.wed_end_date_entrada_1",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.thu_entrada_1",
+                                                "input_boolean.thu_inc_entrada_1",
+                                                "input_datetime.thu_start_date_entrada_1",
+                                                "input_datetime.thu_end_date_entrada_1",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.fri_entrada_1",
+                                                "input_boolean.fri_inc_entrada_1",
+                                                "input_datetime.fri_start_date_entrada_1",
+                                                "input_datetime.fri_end_date_entrada_1",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.sat_entrada_1",
+                                                "input_boolean.sat_inc_entrada_1",
+                                                "input_datetime.sat_start_date_entrada_1",
+                                                "input_datetime.sat_end_date_entrada_1"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "content": "## Code 2\n",
+                                    "type": "markdown"
+                                },
+                                {
+                                    "type": "entities",
+                                    "show_header_toggle": false,
+                                    "entities": [
+                                        {
+                                            "entity": "input_text.entrada_name_2"
+                                        },
+                                        {
+                                            "entity": "input_text.entrada_pin_2"
+                                        },
+                                        {
+                                            "entity": "input_boolean.enabled_entrada_2"
+                                        },
+                                        {
+                                            "entity": "input_boolean.notify_entrada_2"
+                                        },
+                                        {
+                                            "type": "divider"
+                                        },
+                                        {
+                                            "entity": "sensor.connected_entrada_2",
+                                            "state_color": true
+                                        },
+                                        {
+                                            "type": "custom:fold-entity-row",
+                                            "head": {
+                                                "type": "section",
+                                                "label": "Debug"
+                                            },
+                                            "open": false,
+                                            "entities": [
+                                                {
+                                                    "entity": "binary_sensor.active_entrada_2",
+                                                    "state_color": true
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "sensor.entrada_code_slot_2",
+                                                    "state_color": true
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "binary_sensor.pin_synched_entrada_2",
+                                                    "state_color": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "custom:fold-entity-row",
+                                            "head": {
+                                                "type": "section",
+                                                "label": "Advanced Options"
+                                            },
+                                            "entities": [
+                                                {
+                                                    "entity": "input_boolean.reset_codeslot_entrada_2"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "input_boolean.accesslimit_entrada_2"
+                                                },
+                                                {
+                                                    "entity": "input_number.accesscount_entrada_2"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "input_boolean.daterange_entrada_2"
+                                                },
+                                                {
+                                                    "entity": "input_datetime.start_date_entrada_2"
+                                                },
+                                                {
+                                                    "entity": "input_datetime.end_date_entrada_2"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.sun_entrada_2",
+                                                "input_boolean.sun_inc_entrada_2",
+                                                "input_datetime.sun_start_date_entrada_2",
+                                                "input_datetime.sun_end_date_entrada_2",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.mon_entrada_2",
+                                                "input_boolean.mon_inc_entrada_2",
+                                                "input_datetime.mon_start_date_entrada_2",
+                                                "input_datetime.mon_end_date_entrada_2",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.tue_entrada_2",
+                                                "input_boolean.tue_inc_entrada_2",
+                                                "input_datetime.tue_start_date_entrada_2",
+                                                "input_datetime.tue_end_date_entrada_2",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.wed_entrada_2",
+                                                "input_boolean.wed_inc_entrada_2",
+                                                "input_datetime.wed_start_date_entrada_2",
+                                                "input_datetime.wed_end_date_entrada_2",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.thu_entrada_2",
+                                                "input_boolean.thu_inc_entrada_2",
+                                                "input_datetime.thu_start_date_entrada_2",
+                                                "input_datetime.thu_end_date_entrada_2",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.fri_entrada_2",
+                                                "input_boolean.fri_inc_entrada_2",
+                                                "input_datetime.fri_start_date_entrada_2",
+                                                "input_datetime.fri_end_date_entrada_2",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.sat_entrada_2",
+                                                "input_boolean.sat_inc_entrada_2",
+                                                "input_datetime.sat_start_date_entrada_2",
+                                                "input_datetime.sat_end_date_entrada_2"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "content": "## Code 3\n",
+                                    "type": "markdown"
+                                },
+                                {
+                                    "type": "entities",
+                                    "show_header_toggle": false,
+                                    "entities": [
+                                        {
+                                            "entity": "input_text.entrada_name_3"
+                                        },
+                                        {
+                                            "entity": "input_text.entrada_pin_3"
+                                        },
+                                        {
+                                            "entity": "input_boolean.enabled_entrada_3"
+                                        },
+                                        {
+                                            "entity": "input_boolean.notify_entrada_3"
+                                        },
+                                        {
+                                            "type": "divider"
+                                        },
+                                        {
+                                            "entity": "sensor.connected_entrada_3",
+                                            "state_color": true
+                                        },
+                                        {
+                                            "type": "custom:fold-entity-row",
+                                            "head": {
+                                                "type": "section",
+                                                "label": "Debug"
+                                            },
+                                            "open": false,
+                                            "entities": [
+                                                {
+                                                    "entity": "binary_sensor.active_entrada_3",
+                                                    "state_color": true
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "sensor.entrada_code_slot_3",
+                                                    "state_color": true
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "binary_sensor.pin_synched_entrada_3",
+                                                    "state_color": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "custom:fold-entity-row",
+                                            "head": {
+                                                "type": "section",
+                                                "label": "Advanced Options"
+                                            },
+                                            "entities": [
+                                                {
+                                                    "entity": "input_boolean.reset_codeslot_entrada_3"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "input_boolean.accesslimit_entrada_3"
+                                                },
+                                                {
+                                                    "entity": "input_number.accesscount_entrada_3"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "input_boolean.daterange_entrada_3"
+                                                },
+                                                {
+                                                    "entity": "input_datetime.start_date_entrada_3"
+                                                },
+                                                {
+                                                    "entity": "input_datetime.end_date_entrada_3"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.sun_entrada_3",
+                                                "input_boolean.sun_inc_entrada_3",
+                                                "input_datetime.sun_start_date_entrada_3",
+                                                "input_datetime.sun_end_date_entrada_3",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.mon_entrada_3",
+                                                "input_boolean.mon_inc_entrada_3",
+                                                "input_datetime.mon_start_date_entrada_3",
+                                                "input_datetime.mon_end_date_entrada_3",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.tue_entrada_3",
+                                                "input_boolean.tue_inc_entrada_3",
+                                                "input_datetime.tue_start_date_entrada_3",
+                                                "input_datetime.tue_end_date_entrada_3",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.wed_entrada_3",
+                                                "input_boolean.wed_inc_entrada_3",
+                                                "input_datetime.wed_start_date_entrada_3",
+                                                "input_datetime.wed_end_date_entrada_3",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.thu_entrada_3",
+                                                "input_boolean.thu_inc_entrada_3",
+                                                "input_datetime.thu_start_date_entrada_3",
+                                                "input_datetime.thu_end_date_entrada_3",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.fri_entrada_3",
+                                                "input_boolean.fri_inc_entrada_3",
+                                                "input_datetime.fri_start_date_entrada_3",
+                                                "input_datetime.fri_end_date_entrada_3",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.sat_entrada_3",
+                                                "input_boolean.sat_inc_entrada_3",
+                                                "input_datetime.sat_start_date_entrada_3",
+                                                "input_datetime.sat_end_date_entrada_3"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "content": "## Code 4\n",
+                                    "type": "markdown"
+                                },
+                                {
+                                    "type": "entities",
+                                    "show_header_toggle": false,
+                                    "entities": [
+                                        {
+                                            "entity": "input_text.entrada_name_4"
+                                        },
+                                        {
+                                            "entity": "input_text.entrada_pin_4"
+                                        },
+                                        {
+                                            "entity": "input_boolean.enabled_entrada_4"
+                                        },
+                                        {
+                                            "entity": "input_boolean.notify_entrada_4"
+                                        },
+                                        {
+                                            "type": "divider"
+                                        },
+                                        {
+                                            "entity": "sensor.connected_entrada_4",
+                                            "state_color": true
+                                        },
+                                        {
+                                            "type": "custom:fold-entity-row",
+                                            "head": {
+                                                "type": "section",
+                                                "label": "Debug"
+                                            },
+                                            "open": false,
+                                            "entities": [
+                                                {
+                                                    "entity": "binary_sensor.active_entrada_4",
+                                                    "state_color": true
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "sensor.entrada_code_slot_4",
+                                                    "state_color": true
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "binary_sensor.pin_synched_entrada_4",
+                                                    "state_color": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "custom:fold-entity-row",
+                                            "head": {
+                                                "type": "section",
+                                                "label": "Advanced Options"
+                                            },
+                                            "entities": [
+                                                {
+                                                    "entity": "input_boolean.reset_codeslot_entrada_4"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "input_boolean.accesslimit_entrada_4"
+                                                },
+                                                {
+                                                    "entity": "input_number.accesscount_entrada_4"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "input_boolean.daterange_entrada_4"
+                                                },
+                                                {
+                                                    "entity": "input_datetime.start_date_entrada_4"
+                                                },
+                                                {
+                                                    "entity": "input_datetime.end_date_entrada_4"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.sun_entrada_4",
+                                                "input_boolean.sun_inc_entrada_4",
+                                                "input_datetime.sun_start_date_entrada_4",
+                                                "input_datetime.sun_end_date_entrada_4",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.mon_entrada_4",
+                                                "input_boolean.mon_inc_entrada_4",
+                                                "input_datetime.mon_start_date_entrada_4",
+                                                "input_datetime.mon_end_date_entrada_4",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.tue_entrada_4",
+                                                "input_boolean.tue_inc_entrada_4",
+                                                "input_datetime.tue_start_date_entrada_4",
+                                                "input_datetime.tue_end_date_entrada_4",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.wed_entrada_4",
+                                                "input_boolean.wed_inc_entrada_4",
+                                                "input_datetime.wed_start_date_entrada_4",
+                                                "input_datetime.wed_end_date_entrada_4",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.thu_entrada_4",
+                                                "input_boolean.thu_inc_entrada_4",
+                                                "input_datetime.thu_start_date_entrada_4",
+                                                "input_datetime.thu_end_date_entrada_4",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.fri_entrada_4",
+                                                "input_boolean.fri_inc_entrada_4",
+                                                "input_datetime.fri_start_date_entrada_4",
+                                                "input_datetime.fri_end_date_entrada_4",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.sat_entrada_4",
+                                                "input_boolean.sat_inc_entrada_4",
+                                                "input_datetime.sat_start_date_entrada_4",
+                                                "input_datetime.sat_end_date_entrada_4"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "content": "## Code 5\n",
+                                    "type": "markdown"
+                                },
+                                {
+                                    "type": "entities",
+                                    "show_header_toggle": false,
+                                    "entities": [
+                                        {
+                                            "entity": "input_text.entrada_name_5"
+                                        },
+                                        {
+                                            "entity": "input_text.entrada_pin_5"
+                                        },
+                                        {
+                                            "entity": "input_boolean.enabled_entrada_5"
+                                        },
+                                        {
+                                            "entity": "input_boolean.notify_entrada_5"
+                                        },
+                                        {
+                                            "type": "divider"
+                                        },
+                                        {
+                                            "entity": "sensor.connected_entrada_5",
+                                            "state_color": true
+                                        },
+                                        {
+                                            "type": "custom:fold-entity-row",
+                                            "head": {
+                                                "type": "section",
+                                                "label": "Debug"
+                                            },
+                                            "open": false,
+                                            "entities": [
+                                                {
+                                                    "entity": "binary_sensor.active_entrada_5",
+                                                    "state_color": true
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "sensor.entrada_code_slot_5",
+                                                    "state_color": true
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "binary_sensor.pin_synched_entrada_5",
+                                                    "state_color": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "custom:fold-entity-row",
+                                            "head": {
+                                                "type": "section",
+                                                "label": "Advanced Options"
+                                            },
+                                            "entities": [
+                                                {
+                                                    "entity": "input_boolean.reset_codeslot_entrada_5"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "input_boolean.accesslimit_entrada_5"
+                                                },
+                                                {
+                                                    "entity": "input_number.accesscount_entrada_5"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                {
+                                                    "entity": "input_boolean.daterange_entrada_5"
+                                                },
+                                                {
+                                                    "entity": "input_datetime.start_date_entrada_5"
+                                                },
+                                                {
+                                                    "entity": "input_datetime.end_date_entrada_5"
+                                                },
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.sun_entrada_5",
+                                                "input_boolean.sun_inc_entrada_5",
+                                                "input_datetime.sun_start_date_entrada_5",
+                                                "input_datetime.sun_end_date_entrada_5",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.mon_entrada_5",
+                                                "input_boolean.mon_inc_entrada_5",
+                                                "input_datetime.mon_start_date_entrada_5",
+                                                "input_datetime.mon_end_date_entrada_5",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.tue_entrada_5",
+                                                "input_boolean.tue_inc_entrada_5",
+                                                "input_datetime.tue_start_date_entrada_5",
+                                                "input_datetime.tue_end_date_entrada_5",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.wed_entrada_5",
+                                                "input_boolean.wed_inc_entrada_5",
+                                                "input_datetime.wed_start_date_entrada_5",
+                                                "input_datetime.wed_end_date_entrada_5",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.thu_entrada_5",
+                                                "input_boolean.thu_inc_entrada_5",
+                                                "input_datetime.thu_start_date_entrada_5",
+                                                "input_datetime.thu_end_date_entrada_5",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.fri_entrada_5",
+                                                "input_boolean.fri_inc_entrada_5",
+                                                "input_datetime.fri_start_date_entrada_5",
+                                                "input_datetime.fri_end_date_entrada_5",
+                                                {
+                                                    "type": "divider"
+                                                },
+                                                "input_boolean.sat_entrada_5",
+                                                "input_boolean.sat_inc_entrada_5",
+                                                "input_datetime.sat_start_date_entrada_5",
+                                                "input_datetime.sat_end_date_entrada_5"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "ZWave Network",
+                    "path": "zwave-network",
+                    "icon": "mdi:z-wave",
+                    "panel": true,
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "custom:ozw-network-visualization-card",
+                            "integration": "ozw"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

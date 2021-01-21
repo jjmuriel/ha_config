@@ -1,0 +1,222 @@
+{
+    "version": 1,
+    "key": "lovelace.lovelace_erika",
+    "data": {
+        "config": {
+            "title": "Control Apartamento",
+            "views": [
+                {
+                    "path": "inicio",
+                    "title": "Inicio",
+                    "visible": [
+                        {
+                            "user": "41d583e98ad44fcb815eddd81c7762d2"
+                        },
+                        {
+                            "user": "6fadf018db894713af1eff14127e966e"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "lock.schlage_connect_smart_deadbolt_locked",
+                            "hold_action": {
+                                "action": "more-info"
+                            },
+                            "icon_height": "50px",
+                            "name": "Puerta",
+                            "show_icon": true,
+                            "show_name": true,
+                            "show_state": false,
+                            "tap_action": {
+                                "action": "toggle"
+                            },
+                            "type": "button"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "switch.siren_gen5_switch"
+                                }
+                            ],
+                            "show_header_toggle": false
+                        },
+                        {
+                            "type": "alarm-panel",
+                            "states": [
+                                "arm_home",
+                                "arm_away"
+                            ],
+                            "entity": "alarm_control_panel.alarma_apartamento",
+                            "name": "Alarma"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "switch.toma3_tv_salacomedor"
+                                        },
+                                        {
+                                            "entity": "switch.toma2_deco_salacomedor"
+                                        },
+                                        {
+                                            "entity": "switch.luz_indirecta_salacomedor"
+                                        }
+                                    ],
+                                    "title": "TV Salacomedor",
+                                    "type": "entities",
+                                    "show_header_toggle": false
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "switch.toma3_tv_sala_de_tv"
+                                        },
+                                        {
+                                            "entity": "switch.toma4_mibox_sala_de_tv"
+                                        }
+                                    ],
+                                    "title": "TV Sala de TV",
+                                    "type": "entities",
+                                    "show_header_toggle": false
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "switch.toma_tv_cuarto_principal"
+                                        }
+                                    ],
+                                    "title": "TV cuarto principal",
+                                    "type": "entities",
+                                    "show_header_toggle": false
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "switch.extension"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Extensi\u00f3n l\u00e1mpara Lucianita"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.shelly_lavadora_relay_0"
+                                }
+                            ],
+                            "title": "Lavadora",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.abrir_cortina_sala"
+                                },
+                                {
+                                    "entity": "switch.cerrar_cortina_sala"
+                                },
+                                {
+                                    "entity": "switch.parar_cortina_sala"
+                                }
+                            ],
+                            "title": "Cortina sala",
+                            "type": "entities",
+                            "show_header_toggle": false
+                        }
+                    ]
+                },
+                {
+                    "path": "camaras",
+                    "title": "C\u00e1maras",
+                    "visible": [
+                        {
+                            "user": "41d583e98ad44fcb815eddd81c7762d2"
+                        },
+                        {
+                            "user": "6fadf018db894713af1eff14127e966e"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.ndb313_w_mainstream",
+                                    "entities": [
+                                        {
+                                            "entity": "binary_sensor.eu_z_wave_door_window_sensor_sensor"
+                                        }
+                                    ],
+                                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                                    "title": "Entrada",
+                                    "type": "picture-glance"
+                                },
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.amcrest_mediaprofile_channel1_mainstream",
+                                    "entities": [
+                                        {
+                                            "entity": "binary_sensor.multisensor_6_home_security_tampering_cover_removed"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.multisensor_6_home_security_motion_detected"
+                                        }
+                                    ],
+                                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                                    "title": "Salacomedor",
+                                    "type": "picture-glance"
+                                },
+                                {
+                                    "aspect_ratio": "0%",
+                                    "camera_image": "camera.camara_sala_de_tv",
+                                    "entities": [
+                                        {
+                                            "entity": "binary_sensor.pir_sala_de_tv"
+                                        }
+                                    ],
+                                    "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+                                    "title": "Sala de TV",
+                                    "type": "picture-glance"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        }
+                    ]
+                },
+                {
+                    "path": "plantas",
+                    "title": "Plantas",
+                    "visible": [
+                        {
+                            "user": "41d583e98ad44fcb815eddd81c7762d2"
+                        },
+                        {
+                            "user": "6fadf018db894713af1eff14127e966e"
+                        }
+                    ],
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "plant.tronco_de_la_felicidad",
+                            "name": "Tronco de la Felicidad",
+                            "type": "plant-status"
+                        },
+                        {
+                            "entity": "plant.cactus",
+                            "name": "Cactus",
+                            "type": "plant-status"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,43 @@
+  project_id: !secret google_assistant_project_id
+  secure_devices_pin: !secret pin_google_assistant
+  service_account: !include SERVICE_ACCOUNT.JSON
+  report_state: true
+  exposed_domains:
+    - light
+    - script
+    - lock
+    - sensor
+    - climate
+    - alarm_control_panel
+#    - media_player
+#    - switch
+    - camera
+  entity_config:
+    switch.broadlink_sp3s_15a_switch:
+      name: "Ventilador estudio"
+      expose: true
+    switch.shelly_lavadora_relay_0:
+      name: "Lavadora"
+      expose: true
+    switch.shelly_ventilador_cuarto_principal:
+      name: "Ventilador cuarto principal"
+      expose: true
+    switch.shelly_ventilador_salacomedor:
+      name: "Ventilador salacomedor"
+      expose: true
+    switch.extension:
+      name: "Extensión"
+      expose: true
+    switch.toma2_playstation:
+      name: "Playstation"
+      expose: true
+    switch.abrir_cortina_sala:
+        name: "Abre cortina"
+        expose: true
+    switch.cerrar_cortina_sala:
+        name: "Cierra cortina"
+        expose: true
+    switch.parar_cortina_sala:
+        name: "Para cortina"
+        expose: true
+  

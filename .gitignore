@@ -1,0 +1,32 @@
+# .gitignore file for my config dir.
+# An * ensures that everything will be ignored.
+*
+# You can whitelist files/folders with !, these will not be ignored.
+!*/
+!*.yaml
+!.gitignore
+!*.md
+!.storage/lovelace*
+!switches/*
+!custom_components/*
+!blueprints/*
+!packages/*
+!binary_sensors/*
+!remotos/*
+!sensors/*
+!camaras/*
+!automations/*
+!luces/*
+!www/*
+!themes/*
+
+
+
+# Ignore folders.
+.cloud
+.google.token
+
+# Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml

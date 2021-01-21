@@ -1,0 +1,966 @@
+{
+    "version": 1,
+    "key": "lovelace.control_remoto",
+    "data": {
+        "config": {
+            "title": "Mi Hogar",
+            "views": [
+                {
+                    "title": "Challenger TV",
+                    "path": "challenger-tv",
+                    "panel": false,
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "grid",
+                            "columns": 1,
+                            "cards": [
+                                {
+                                    "type": "grid",
+                                    "columns": 1,
+                                    "square": false,
+                                    "cards": [
+                                        {
+                                            "type": "markdown",
+                                            "content": "## Challenger TV (Estudio)\n"
+                                        },
+                                        {
+                                            "type": "grid",
+                                            "cards": [
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.tv_estudio",
+                                                    "icon": "mdi:power",
+                                                    "show_name": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "entity": "switch.silencia_tv_estudio",
+                                                    "show_name": false,
+                                                    "icon": "mdi:volume-mute",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_icon": false,
+                                                    "show_state": false
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.silencia_tv_estudio",
+                                                    "show_name": false,
+                                                    "icon": "mdi:volume-mute",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.menu_tv_estudio",
+                                                    "show_name": true,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_icon": false,
+                                                    "icon": "mdi:menu",
+                                                    "name": "Men\u00fa"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.arriba_tv_estudio",
+                                                    "show_name": false,
+                                                    "icon": "mdi:arrow-up-bold",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.salir_tv_estudio",
+                                                    "show_name": true,
+                                                    "icon": "mdi:exit-to-app",
+                                                    "name": "Salir",
+                                                    "show_icon": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.izquierda_tv_estudio",
+                                                    "show_name": false,
+                                                    "icon": "mdi:arrow-left-bold",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.aceptar_tv_estudio",
+                                                    "show_icon": false,
+                                                    "name": "OK",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.derecha_tv_estudio",
+                                                    "icon": "mdi:arrow-right-bold",
+                                                    "show_name": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.fuente_tv_estudio",
+                                                    "show_icon": false,
+                                                    "name": "Entrada",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.abajo_tv_estudio",
+                                                    "icon": "mdi:arrow-down-bold",
+                                                    "show_name": false
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.info_tv_estudio",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_icon": false,
+                                                    "name": "Info"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.volumen_arriba_tv_estudio",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_name": false,
+                                                    "icon": "mdi:volume-plus"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.volumen_abajo_tv_estudio",
+                                                    "show_icon": true,
+                                                    "show_name": false,
+                                                    "icon": "mdi:volume-minus",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.atras_tv_estudio",
+                                                    "show_name": false,
+                                                    "icon": "mdi:undo",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "cards": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Barra de sonido LG",
+                    "path": "barra-de-sonido-lg",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "grid",
+                            "columns": 1,
+                            "cards": [
+                                {
+                                    "type": "grid",
+                                    "columns": 1,
+                                    "square": false,
+                                    "cards": [
+                                        {
+                                            "type": "markdown",
+                                            "content": "## Barra de Sonido LG (Salacomedor)\n"
+                                        },
+                                        {
+                                            "type": "grid",
+                                            "cards": [
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.barra_de_sonido_lg",
+                                                    "icon": "mdi:power",
+                                                    "show_name": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "entity": "switch.arriba_barra_de_sonido_lg",
+                                                    "show_name": true,
+                                                    "icon": "mdi:toslink",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_icon": false,
+                                                    "show_state": false,
+                                                    "name": "\u00d3ptica"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.silenciar_barra_de_sonido_lg",
+                                                    "show_name": false,
+                                                    "icon": "mdi:volume-mute",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.entrada_barra_de_sonido_lg",
+                                                    "show_name": true,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_icon": false,
+                                                    "icon": "mdi:menu",
+                                                    "name": "Funci\u00f3n"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.arriba_barra_de_sonido_lg",
+                                                    "show_name": false,
+                                                    "icon": "mdi:arrow-up-bold",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.efecto_audio_barra_de_sonido_lg",
+                                                    "show_name": true,
+                                                    "name": "Efecto de Sonido",
+                                                    "show_icon": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.izquierda_barra_de_sonido_lg",
+                                                    "show_name": false,
+                                                    "icon": "mdi:arrow-left-bold",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.ok_barra_de_sonido_lg",
+                                                    "show_icon": false,
+                                                    "name": "OK",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.derecha_barra_de_sonido_lg",
+                                                    "icon": "mdi:arrow-right-bold",
+                                                    "show_name": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.nivel_subwoofer_barra_de_sonido_lg",
+                                                    "show_icon": false,
+                                                    "name": "Nivel Woofer",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.abajo_barra_de_sonido_lg",
+                                                    "icon": "mdi:arrow-down-bold",
+                                                    "show_name": false
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.arriba_barra_de_sonido_lg",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_icon": false,
+                                                    "name": "Info-corregirrrr"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "call-service",
+                                                        "service": "switch.turn_on",
+                                                        "service_data": {
+                                                            "entity_id": "switch.volumen_barra_de_sonido_lg"
+                                                        }
+                                                    },
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_name": false,
+                                                    "icon": "mdi:volume-plus"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "call-service",
+                                                        "service": "switch.turn_off",
+                                                        "service_data": {
+                                                            "entity_id": "switch.volumen_barra_de_sonido_lg"
+                                                        }
+                                                    },
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "icon": "mdi:volume-minus"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.atras_tv_estudio",
+                                                    "show_name": false,
+                                                    "icon": "mdi:undo",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "TV SALACOMEDOR",
+                    "path": "lg-webos-tv-salacomedor-y-cuarto-principal",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "grid",
+                            "columns": 1,
+                            "cards": [
+                                {
+                                    "type": "grid",
+                                    "columns": 1,
+                                    "square": false,
+                                    "cards": [
+                                        {
+                                            "type": "markdown",
+                                            "content": "## TELEVISOR SALACOMEDOR (LG WEBOS)"
+                                        },
+                                        {
+                                            "type": "grid",
+                                            "columns": 4,
+                                            "cards": [
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala",
+                                                    "show_name": false,
+                                                    "icon": "mdi:power",
+                                                    "show_state": false
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "entity": "light.luz_cuarto_principal",
+                                                    "show_name": false,
+                                                    "show_icon": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "entity": "light.luz_cuarto_principal",
+                                                    "show_name": false,
+                                                    "show_icon": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_tv_rad",
+                                                    "show_name": false,
+                                                    "icon": "mdi:radio"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "grid",
+                                            "columns": 4,
+                                            "cards": [
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_subtitles",
+                                                    "show_name": true,
+                                                    "show_icon": false,
+                                                    "name": "SUBTITLE"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_config",
+                                                    "show_icon": true,
+                                                    "icon": "mdi:cog-box",
+                                                    "show_name": false
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_search",
+                                                    "show_icon": true,
+                                                    "show_name": false,
+                                                    "icon": "mdi:magnify"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_input",
+                                                    "show_icon": true,
+                                                    "show_name": false,
+                                                    "icon": "mdi:video-input-hdmi"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "grid",
+                                            "columns": 4,
+                                            "cards": [
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_hdmi1",
+                                                    "show_name": true,
+                                                    "show_icon": false,
+                                                    "name": "HDMI1"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_hdmi2",
+                                                    "show_icon": false,
+                                                    "name": "HDMI2"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_hdmi3",
+                                                    "name": "HDMI3",
+                                                    "show_icon": false
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_hdmi4",
+                                                    "show_icon": false,
+                                                    "name": "HDMI4"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "grid",
+                                            "columns": 3,
+                                            "cards": [
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_1",
+                                                    "icon": "mdi:numeric-1",
+                                                    "show_name": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_2",
+                                                    "icon": "mdi:numeric-2",
+                                                    "show_name": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_icon": true,
+                                                    "show_state": false,
+                                                    "name": "Entradas"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_3",
+                                                    "icon": "mdi:numeric-3",
+                                                    "show_name": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_4",
+                                                    "icon": "mdi:numeric-4",
+                                                    "show_name": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_icon": true,
+                                                    "name": "TV/RAD"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_5",
+                                                    "icon": "mdi:numeric-5",
+                                                    "show_name": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_6",
+                                                    "icon": "mdi:numeric-6",
+                                                    "show_name": false,
+                                                    "name": "Efecto de Sonido",
+                                                    "show_icon": true,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_7",
+                                                    "icon": "mdi:numeric-7",
+                                                    "show_name": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_8",
+                                                    "icon": "mdi:numeric-8",
+                                                    "show_name": false,
+                                                    "show_icon": true,
+                                                    "name": "OK",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_9",
+                                                    "icon": "mdi:numeric-9",
+                                                    "show_name": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_list",
+                                                    "show_icon": false,
+                                                    "name": "LIST",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_0",
+                                                    "icon": "mdi:numeric-0",
+                                                    "show_name": false
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_q_view",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_icon": false,
+                                                    "name": "Q.VIEW"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "call-service",
+                                                        "service": "switch.turn_on",
+                                                        "service_data": {
+                                                            "entity_id": "switch.lg_webos_sala_vol"
+                                                        }
+                                                    },
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_name": false,
+                                                    "icon": "mdi:volume-plus"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "state_color": false,
+                                                    "tap_action": {
+                                                        "action": "call-service",
+                                                        "service": "switch.turn_off",
+                                                        "service_data": {
+                                                            "entity_id": "switch.lg_webos_sala_mute"
+                                                        }
+                                                    },
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "icon": "mdi:volume-off"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_ch",
+                                                    "show_name": true,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_icon": false,
+                                                    "name": "CH+"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_vol_2",
+                                                    "icon": "mdi:volume-minus",
+                                                    "show_name": false
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_fav",
+                                                    "show_icon": false,
+                                                    "name": "FAV"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_ch_2",
+                                                    "show_icon": false,
+                                                    "name": "CH-"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_guide",
+                                                    "show_name": true,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_icon": false,
+                                                    "name": "GUIDE"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_up",
+                                                    "show_name": false,
+                                                    "icon": "mdi:arrow-up-bold",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_live_zoom",
+                                                    "show_name": true,
+                                                    "show_icon": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "name": "LIVE ZOOM"
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_left",
+                                                    "show_name": false,
+                                                    "icon": "mdi:arrow-left-bold",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_ok",
+                                                    "show_icon": false,
+                                                    "name": "OK",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_right",
+                                                    "icon": "mdi:arrow-right-bold",
+                                                    "show_name": false,
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_back",
+                                                    "show_icon": false,
+                                                    "name": "BACK",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_name": true
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_down",
+                                                    "icon": "mdi:arrow-down-bold",
+                                                    "show_name": false
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "switch.lg_webos_sala_exit",
+                                                    "hold_action": {
+                                                        "action": "none"
+                                                    },
+                                                    "show_icon": false,
+                                                    "name": "EXIT"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,41 @@
+switch.toma4_chromecast_sala_de_tv: {}
+binary_sensor.lumi_lumi_sensor_natgas_9cdf4904_ias_zone:
+  device_class: gas
+switch.luz_indirecta_salacomedor:
+  icon: mdi:led-strip-variant
+light.luz_sala_tv:
+  icon: mdi:led-strip-variant
+light.luz_cuarto_principal:
+  friendly_name: Luz cuarto principal
+  supported_features: 5
+  icon: mdi:globe-light
+light.lampara_escritorio:
+  icon: mdi:desk-lamp
+light.lampara_erika:
+  icon: mdi:lamp
+light.lampara_juan_jose:
+  icon: mdi:lamp
+light.luz_cuarto_lucianita:
+  icon: mdi:outdoor-lamp
+light.luz_comedor:
+  icon: mdi:ceiling-light
+light.bombillo_estudio:
+  icon: mdi:outdoor-lamp
+light.luz_hornos:
+  icon: mdi:wall-sconce-round
+light.luz_lavaplatos:
+  icon: mdi:wall-sconce-round
+light.luz_indirecta_escritorio:
+  icon: mdi:led-strip
+switch.shelly_lavadora_relay_0:
+  icon: mdi:washing-machine
+switch.shelly_ventilador_salacomedor:
+  icon: mdi:fan
+switch.shelly_ventilador_cuarto_principal:
+  icon: mdi:fan
+switch.extension:
+  icon: mdi:cable-data
+switch.extension_google_hub:
+  icon: mdi:monitor-speaker
+switch.broadlink_sp3s_15a_switch:
+  icon: mdi:fan

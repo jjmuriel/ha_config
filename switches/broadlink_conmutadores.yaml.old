@@ -1,0 +1,8 @@
+# Integrado por GUI
+# Broadlink SP3 switch
+  # - platform: broadlink
+  #   host: XX.XX.XX.XX
+  #   mac: !secret broadlink_sp3_switch_mac
+  #   type:  sp3
+  #   friendly_name: 'Toma Ventilador Estudio'
+  #   timeout: 15

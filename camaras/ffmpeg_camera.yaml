@@ -1,0 +1,4 @@
+- platform: ffmpeg
+  name: "Cámara Sala de TV"
+  input: !secret stream_camara_wyze
+#  extra_arguments: '-q:v 1 -r 10 -vf "scale=1280:720"'

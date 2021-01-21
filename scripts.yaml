@@ -1,0 +1,93 @@
+luz_indirecta_salacomedor:
+  alias: Luz indirecta salacomedor encendida
+  sequence:
+  - data: {}
+    entity_id: switch.luz_indirecta_salacomedor
+    service: switch.turn_on
+  - delay: 00:00:04
+  - data: {}
+    entity_id: switch.brillo_100_luz_indirecta_salacomedor
+    service: switch.toggle
+system_startup_cleanup:
+  sequence:
+  - condition: state
+    entity_id: input_boolean.system_ready
+    state: 'off'
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.allow_automation_execution
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.system_ready
+enviar_pantallazos:
+  alias: Enviar pantallazos
+  sequence:
+  - service: camera.snapshot
+    data:
+      filename: /media/screenshots/salacomedor.jpg
+    entity_id: camera.amcrest_mediaprofile_channel1_mainstream
+  - service: telegram_bot.send_document
+    data:
+      file: /media/screenshots/salacomedor.jpg
+  - service: camera.snapshot
+    data:
+      filename: /media/screenshots/salatv.jpg
+    entity_id: camera.camara_sala_de_tv
+  - service: telegram_bot.send_document
+    data:
+      file: /media/screenshots/salatv.jpg
+  - service: camera.snapshot
+    data:
+      filename: /media/screenshots/videoportero.jpg
+    entity_id: camera.ndb313_w_mainstream
+  - service: telegram_bot.send_document
+    data:
+      file: /media/screenshots/videoportero.jpg
+  mode: single
+activa_tv_play:
+  alias: Activa TV y Playstation
+  sequence:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.toma3_tv_salacomedor
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.toma2_playstation
+  - delay: 00:00:03
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.lg_tv_salacomedor
+  - delay: 00:00:23
+  - service: media_player.select_source
+    data:
+      source: PS4
+      entity_id: media_player.tv_salacomedor_2
+  mode: single
+desactiva_multimedia_salacomedor:
+  alias: Desactiva multimedia salacomedor
+  sequence:
+  - service: media_player.turn_off
+    data: {}
+    entity_id: media_player.tv_salacomedor_2
+  - delay: 00:00:05
+  - service: switch.turn_off
+    data: {}
+    entity_id: group.multimedia_salacomedor
+  mode: single
+activa_tv_y_deco:
+  alias: Activa TV y deco salacomedor
+  sequence:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.toma3_tv_salacomedor
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.toma1_deco_salacomedor
+  - delay: 00:00:03
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.lg_tv_salacomedor
+  - delay: 00:00:23
+  - service: media_player.select_source
+    data:
+      source: Movistar
+      entity_id: media_player.tv_salacomedor_2
+  mode: single

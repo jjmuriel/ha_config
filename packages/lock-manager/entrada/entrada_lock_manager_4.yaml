@@ -1,0 +1,542 @@
+
+############  input_number:  #####################  
+input_number:
+  accesscount_entrada_4:
+    name: Access Count
+    min: 0
+    max: 100
+    step: 1
+    unit_of_measurement: "Openings Left"
+
+#################  input_datetime:  ##############  
+input_datetime:
+  end_date_entrada_4:
+    name: 'End'
+    has_time: false
+    has_date: true
+  start_date_entrada_4:
+    name: 'Start'
+    has_time: false
+    has_date: true
+
+  sun_start_date_entrada_4:
+    name: 'Start'
+    has_time: true
+    has_date: false
+  sun_end_date_entrada_4:
+    name: 'End'
+    has_time: true
+    has_date: false
+
+  mon_start_date_entrada_4:
+    name: 'Start'
+    has_time: true
+    has_date: false
+  mon_end_date_entrada_4:
+    name: 'End'
+    has_time: true
+    has_date: false
+
+  tue_start_date_entrada_4:
+    name: 'Start'
+    has_time: true
+    has_date: false
+  tue_end_date_entrada_4:
+    name: 'End'
+    has_time: true
+    has_date: false
+
+  wed_start_date_entrada_4:
+    name: 'Start'
+    has_time: true
+    has_date: false
+  wed_end_date_entrada_4:
+    name: 'End'
+    has_time: true
+    has_date: false
+
+  thu_start_date_entrada_4:
+    name: 'Start'
+    has_time: true
+    has_date: false
+  thu_end_date_entrada_4:
+    name: 'End'
+    has_time: true
+    has_date: false
+
+  fri_start_date_entrada_4:
+    name: 'Start'
+    has_time: true
+    has_date: false
+  fri_end_date_entrada_4:
+    name: 'End'
+    has_time: true
+    has_date: false
+
+  sat_start_date_entrada_4:
+    name: 'Start'
+    has_time: true
+    has_date: false
+  sat_end_date_entrada_4:
+    name: 'End'
+    has_time: true
+    has_date: false
+
+
+####################  input_text:  ###############  
+input_text:
+  entrada_name_4:
+    name: 'Name'
+  entrada_pin_4:
+    name: 'PIN'
+
+#################  input_boolean: ################  
+input_boolean:
+  notify_entrada_4:
+    name: 'Notifications'
+  daterange_entrada_4:
+    name: 'Use Date Range'
+  smtwtfs_entrada_4:
+    name: 'Use SMTWTFS'
+  enabled_entrada_4:
+    name: 'Enabled'
+  accesslimit_entrada_4:
+    name: 'Limit Access Count'
+    initial: off
+  reset_codeslot_entrada_4:
+    name: 'Reset Code Slot'
+    initial: off
+
+  sun_entrada_4:
+    name: 'Sunday'
+    initial: on
+
+  mon_entrada_4:
+    name: 'Monday'
+    initial: on
+
+  tue_entrada_4:
+    name: 'Tuesday'
+    initial: on
+
+  wed_entrada_4:
+    name: 'Wednesday'
+    initial: on
+
+  thu_entrada_4:
+    name: 'Thursday'
+    initial: on
+
+  fri_entrada_4:
+    name: 'Friday'
+    initial: on
+
+  sat_entrada_4:
+    name: 'Saturday'
+    initial: on
+
+  sun_inc_entrada_4:
+    name: 'include (on)/exclude (off)'
+    initial: on
+
+  mon_inc_entrada_4:
+    name: 'include (on)/exclude (off)'
+    initial: on
+
+  tue_inc_entrada_4:
+    name: 'include (on)/exclude (off)'
+    initial: on
+
+  wed_inc_entrada_4:
+    name: 'include (on)/exclude (off)'
+    initial: on
+
+  thu_inc_entrada_4:
+    name: 'include (on)/exclude (off)'
+    initial: on
+
+  fri_inc_entrada_4:
+    name: 'include (on)/exclude (off)'
+    initial: on
+
+  sat_inc_entrada_4:
+    name: 'include (on)/exclude (off)'
+    initial: on
+
+################  automation: #################  
+automation:
+
+- alias: sensor_cleanup_entrada_4
+  trigger:
+    - platform: state
+      entity_id: "sensor.connected_entrada_4"
+  condition:
+    - condition: state
+      entity_id: "binary_sensor.allow_automation"
+      state: "on"
+    - condition: template
+      value_template: >-
+        {{ states('sensor.connected_entrada_4') | lower in ['disconnected','connected'] }} 
+  action:
+    - service: timer.cancel
+      entity_id:
+        - timer.entrada_refresh_lock_node
+
+- alias: synchronize_codeslot_entrada_4
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: "binary_sensor.pin_synched_entrada_4"
+      to: 'off'
+    - platform: state
+      entity_id: "sensor.entrada_code_slot_4"
+  condition:
+    - condition: state
+      entity_id: "binary_sensor.allow_automation"
+      state: "on"
+    - condition: state
+      entity_id: "binary_sensor.pin_synched_entrada_4"
+      state: "off"
+    - condition: template
+      value_template: >-
+        {{ states("sensor.entrada_code_slot_4") != "unavailable" }}
+  action:
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: >-
+                {{ states('sensor.connected_entrada_4') | lower in ['disconnecting','connecting'] }} 
+            - condition: template
+              value_template: >-
+                {{ states('timer.entrada_refresh_lock_node') != 'active' }} 
+          sequence:
+            - service: timer.start
+              entity_id: timer.entrada_refresh_lock_node
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: "{{ is_state('binary_sensor.active_entrada_4','on') }}"
+          sequence:
+            - choose:
+                  - conditions: >
+                      {{ True }}
+                  # this comment preserves formating
+                    sequence:
+                      - service: ozw.set_usercode
+                        data_template:
+                          entity_id: lock.schlage_connect_smart_deadbolt_locked
+                          code_slot: >-
+                            {{ 4 }}
+                          usercode: >-
+                            {% set object = states('input_text.entrada_pin_4') %}
+                            {{ object.strip() }}
+                  - conditions: >
+                      {{ True == False }}
+                  # this comment preserves formating
+                    sequence:
+                      - service: lock.set_usercode
+                        data_template:
+                          node_id: >-
+                            {{ state_attr('lock.schlage_connect_smart_deadbolt_locked','node_id') }}
+                          code_slot: >-
+                            {{ 4 }}
+                          usercode: >-
+                            {% set object = states('input_text.entrada_pin_4') %}
+                            {{ object.strip() }}
+        - conditions:
+            - condition: template
+              value_template: "{{ is_state('binary_sensor.active_entrada_4','off') }}"
+          sequence:
+            - choose:
+                  - conditions: >
+                      {{ True }}
+                  # this comment preserves formating
+                    sequence:
+                      # a fake call to clear a non existent slot seems to fix a non clearing call on Schlage
+                      - service: ozw.clear_usercode
+                        data_template:
+                          entity_id: lock.schlage_connect_smart_deadbolt_locked
+                          code_slot: >-
+                            {{ 999 }}
+                      - service: ozw.clear_usercode
+                        data_template:
+                          entity_id: lock.schlage_connect_smart_deadbolt_locked
+                          code_slot: >-
+                            {{ 4 }}
+                  - conditions: >
+                      {{ True == False }}
+                  # this comment preserves formating
+                    sequence:
+                      - service: lock.set_usercode
+                        data_template:
+                          node_id: >-
+                            {{ state_attr('lock.schlage_connect_smart_deadbolt_locked','node_id') }}
+                          code_slot: >-
+                            {{ 4 }}
+                          usercode: >-
+                            {{ range(1000, 9999) | random | int }}
+                      - service: lock.clear_usercode
+                        data_template:
+                          node_id: >-
+                            {{ state_attr('lock.schlage_connect_smart_deadbolt_locked','node_id') }}
+                          code_slot: >-
+                            {{ 4 }}
+          
+- alias: reset_codeslot_entrada_4
+  trigger:
+    entity_id: input_boolean.reset_codeslot_entrada_4
+    platform: state
+    to: 'on'
+  action:
+    - service: input_text.set_value
+      data_template:
+        entity_id: input_text.entrada_name_4
+        value: ""
+    - service: input_text.set_value
+      data_template:
+        entity_id: input_text.entrada_pin_4
+        value: ""
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.notify_entrada_4
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.enabled_entrada_4
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.accesscount_entrada_4
+        value: "0"
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.sun_start_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.sun_end_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.mon_start_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.mon_end_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.tue_start_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.tue_end_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.wed_start_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.wed_end_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.thu_start_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.thu_end_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.fri_start_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.fri_end_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.sat_start_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.sat_end_date_entrada_4
+      data_template:
+        time: >
+          {{  (("00:00")  | timestamp_custom("%H:%M"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.start_date_entrada_4
+      data_template:
+        date: >
+          {{  (("1980-01-01")  | timestamp_custom("%Y %m %d"))  }}      
+    - service: input_datetime.set_datetime
+      entity_id: input_datetime.end_date_entrada_4
+      data_template:
+        date: >
+          {{  (("1980-01-01")  | timestamp_custom("%Y %m %d"))  }}      
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.daterange_entrada_4
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.accesslimit_entrada_4
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.reset_codeslot_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.sun_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.mon_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.tue_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.wed_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.thu_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.fri_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.sat_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.sun_inc_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.mon_inc_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.tue_inc_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.wed_inc_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.thu_inc_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.fri_inc_entrada_4
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.sat_inc_entrada_4
+      
+################  binary_sensor: #################  
+binary_sensor:
+
+- platform: template
+  sensors:
+
+    enabled_entrada_4:
+      value_template: "{{ is_state('input_boolean.enabled_entrada_4', 'on') }}"
+
+    daterange_entrada_4:
+      value_template: "{{ (is_state('input_boolean.daterange_entrada_4', 'off') or ((states.input_datetime.start_date_entrada_4.attributes.timestamp| int | timestamp_custom('%Y%m%d', False)|int)|string <= now().strftime('%Y%m%d')) and (states.input_datetime.end_date_entrada_4.attributes.timestamp| int | timestamp_custom('%Y%m%d', False)|int)|string >=  now().strftime('%Y%m%d'))}}"
+
+    sun_entrada_4:
+      value_template: "{{ (( is_state('input_boolean.sun_entrada_4', 'on'))) and (strptime(states('sensor.date'), '%Y-%m-%d').strftime('%a') | lower == 'sun') and (is_state('input_boolean.sun_inc_entrada_4', 'on')) == ((states.input_datetime.sun_start_date_entrada_4.state == states.input_datetime.sun_end_date_entrada_4.state) or ((states('sensor.time') >= states('input_datetime.sun_start_date_entrada_4')[0:5]) and (states('sensor.time') <= states('input_datetime.sun_end_date_entrada_4')[0:5])) )}}"
+
+    mon_entrada_4:
+      value_template: "{{ (( is_state('input_boolean.mon_entrada_4', 'on'))) and (strptime(states('sensor.date'), '%Y-%m-%d').strftime('%a') | lower == 'mon') and (is_state('input_boolean.mon_inc_entrada_4', 'on')) == ((states.input_datetime.mon_start_date_entrada_4.state == states.input_datetime.mon_end_date_entrada_4.state) or ((states('sensor.time') >= states('input_datetime.mon_start_date_entrada_4')[0:5]) and (states('sensor.time') <= states('input_datetime.mon_end_date_entrada_4')[0:5])) )}}"
+
+    tue_entrada_4:
+      value_template: "{{ (( is_state('input_boolean.tue_entrada_4', 'on'))) and (strptime(states('sensor.date'), '%Y-%m-%d').strftime('%a') | lower == 'tue') and (is_state('input_boolean.tue_inc_entrada_4', 'on')) == ((states.input_datetime.tue_start_date_entrada_4.state == states.input_datetime.tue_end_date_entrada_4.state) or ((states('sensor.time') >= states('input_datetime.tue_start_date_entrada_4')[0:5]) and (states('sensor.time') <= states('input_datetime.tue_end_date_entrada_4')[0:5])) )}}"
+
+    wed_entrada_4:
+      value_template: "{{ (( is_state('input_boolean.wed_entrada_4', 'on'))) and (strptime(states('sensor.date'), '%Y-%m-%d').strftime('%a') | lower == 'wed') and (is_state('input_boolean.wed_inc_entrada_4', 'on')) == ((states.input_datetime.wed_start_date_entrada_4.state == states.input_datetime.wed_end_date_entrada_4.state) or ((states('sensor.time') >= states('input_datetime.wed_start_date_entrada_4')[0:5]) and (states('sensor.time') <= states('input_datetime.wed_end_date_entrada_4')[0:5])) )}}"
+
+    thu_entrada_4:
+      value_template: "{{ (( is_state('input_boolean.thu_entrada_4', 'on'))) and (strptime(states('sensor.date'), '%Y-%m-%d').strftime('%a') | lower == 'thu') and (is_state('input_boolean.thu_inc_entrada_4', 'on')) == ((states.input_datetime.thu_start_date_entrada_4.state == states.input_datetime.thu_end_date_entrada_4.state) or ((states('sensor.time') >= states('input_datetime.thu_start_date_entrada_4')[0:5]) and (states('sensor.time') <= states('input_datetime.thu_end_date_entrada_4')[0:5])) )}}"
+
+    fri_entrada_4:
+      value_template: "{{ (( is_state('input_boolean.fri_entrada_4', 'on'))) and (strptime(states('sensor.date'), '%Y-%m-%d').strftime('%a') | lower == 'fri') and (is_state('input_boolean.fri_inc_entrada_4', 'on')) == ((states.input_datetime.fri_start_date_entrada_4.state == states.input_datetime.fri_end_date_entrada_4.state) or ((states('sensor.time') >= states('input_datetime.fri_start_date_entrada_4')[0:5]) and (states('sensor.time') <= states('input_datetime.fri_end_date_entrada_4')[0:5])) )}}"
+
+    sat_entrada_4:
+      value_template: "{{ (( is_state('input_boolean.sat_entrada_4', 'on'))) and (strptime(states('sensor.date'), '%Y-%m-%d').strftime('%a') | lower == 'sat') and (is_state('input_boolean.sat_inc_entrada_4', 'on')) == ((states.input_datetime.sat_start_date_entrada_4.state == states.input_datetime.sat_end_date_entrada_4.state) or ((states('sensor.time') >= states('input_datetime.sat_start_date_entrada_4')[0:5]) and (states('sensor.time') <= states('input_datetime.sat_end_date_entrada_4')[0:5])) )}}"
+
+    smtwtfs_entrada_4:
+      friendly_name: "Status"
+      value_template: >- 
+         {{
+            is_state('binary_sensor.sun_entrada_4', 'on')  or  
+            is_state('binary_sensor.mon_entrada_4', 'on')  or  
+            is_state('binary_sensor.tue_entrada_4', 'on')  or  
+            is_state('binary_sensor.wed_entrada_4', 'on')  or  
+            is_state('binary_sensor.thu_entrada_4', 'on')  or  
+            is_state('binary_sensor.fri_entrada_4', 'on')  or  
+            is_state('binary_sensor.sat_entrada_4', 'on')   
+         }}
+    
+    access_count_entrada_4:
+      friendly_name: "Access Count"
+      value_template: >-
+         {{
+            (is_state('input_boolean.accesslimit_entrada_4', 'off'))  or  
+            (states.input_number.accesscount_entrada_4.state | int > 0)
+         }}
+
+    active_entrada_4:
+      friendly_name: "Desired PIN State"
+      value_template: >-
+         {{
+            is_state('binary_sensor.enabled_entrada_4', 'on')  and  
+            is_state('binary_sensor.access_count_entrada_4', 'on')  and  
+            is_state('binary_sensor.daterange_entrada_4', 'on') and
+            is_state('binary_sensor.smtwtfs_entrada_4', 'on')  
+         }}
+
+    pin_synched_entrada_4:
+      friendly_name: 'PIN synchronized with lock'
+      value_template: >
+        {% set lock = 'sensor.entrada_code_slot_4' %}
+        {% set local = 'input_text.entrada_pin_4' %}
+        {% set status = 'binary_sensor.active_entrada_4' %}
+        {% set lockpin = states(lock).strip()  %}
+        {% set localpin = states(local).strip()  %}
+        {% set pinstatus = states(status)  %}
+        {% if lockpin == "0000" %}
+        {%   set lockpin = "" %}
+        {% endif %}
+        {% if pinstatus == 'on' %}
+        {% set correct = localpin == lockpin %}
+        {% else %}
+        {% set correct = lockpin == "" %}
+        {% endif %}
+        {{ correct }}
+
+###################  sensor:  ####################  
+sensor:
+
+- platform: template
+  sensors:
+  
+    connected_entrada_4:
+      # icon: mdi:glassdoor
+      friendly_name: "PIN Status"
+      value_template: >-
+        {% set pinstatus = states('binary_sensor.active_entrada_4')  %}      
+        {% set syncstatus = states('binary_sensor.pin_synched_entrada_4')  %}      
+        {% if pinstatus == 'on' %}
+          {% if syncstatus == 'on' %}
+            {% set report = 'Connected' %}
+          {% else %}
+            {% set report = 'Connecting' %}
+          {% endif %}
+        {% else %}
+          {% if syncstatus == 'on' %}
+            {% set report = 'Disconnected' %}
+          {% else %}
+            {% set report = 'Disconnecting' %}
+          {% endif %}
+        {% endif %}
+        {{
+          report
+        }}
+      icon_template: >
+        {% if (states('sensor.connected_entrada_4') | lower) == 'connected' %}
+          mdi:folder-key
+        {% elif (states('sensor.connected_entrada_4') | lower) == 'connecting' %}
+          mdi:folder-key-network
+        {% elif (states('sensor.connected_entrada_4') | lower) == 'disconnected' %}
+          mdi:folder-open
+        {% elif (states('sensor.connected_entrada_4') | lower) == 'disconnecting' %}
+          mdi:wiper-wash
+        {% endif %}

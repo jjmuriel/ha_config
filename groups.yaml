@@ -1,0 +1,20 @@
+  multimedia_salacomedor:
+    name: Multimedia salacomedor
+    entities:
+      - switch.toma1_deco_salacomedor
+      - switch.toma2_playstation
+      - switch.toma3_tv_salacomedor
+      - switch.toma4_chromecast_salacomedor
+      - switch.tomausb_sala
+  multimedia_salatv:
+    name: Multimedia sala de TV
+    entities:
+      - switch.toma2_deco_sala_de_tv
+      - switch.toma3_tv_sala_de_tv
+      - switch.toma4_chromecast_sala_de_tv
+      - switch.tomausb_broadlink_mini_sala_de_tv
+  multimedia_salatv_lucianita:
+    name: Multimedia sala de TV (Lucianita)
+    entities:
+      - switch.toma3_tv_sala_de_tv
+      - switch.toma4_chromecast_sala_de_tv

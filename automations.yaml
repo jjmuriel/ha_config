@@ -1,0 +1,214 @@
+- id: '1606747971649'
+  alias: Autobloqueo cerradura
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: lock.schlage_connect_smart_deadbolt_locked
+    to: unlocked
+    for: 00:00:30
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.eu_z_wave_door_window_sensor_access_control_door_window_open
+      state: 'off'
+    - condition: state
+      entity_id: lock.schlage_connect_smart_deadbolt_locked
+      state: unlocked
+  action:
+  - service: lock.lock
+    data: {}
+    entity_id: lock.schlage_connect_smart_deadbolt_locked
+  mode: single
+- id: '1606753900755'
+  alias: Alerta de gas
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.lumi_lumi_sensor_natgas_9cdf4904_ias_zone
+    to: 'on'
+  condition: []
+  action:
+  - service: tts.google_translate_say
+    entity_id: media_player.altavoces_apartamento
+    data:
+      message: "¡Alerta!, ¡Alerta! Sospecha de fuga de gas, por favor revisar inmediatamente."
+      language: es
+  mode: single
+- alias: Sync Tasmota states
+  initial_state: true
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/tasmotas/state
+      payload: ''
+  id: 8d7fb69136a74860a15033dc631cc9f9
+- alias: homeassistant start-up
+  initial_state: true
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.system_ready
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.allow_automation_execution
+  id: 18e8c1ab3d1641bf957310d1346cd8d7
+- alias: open_zwave_network_down
+  initial_state: true
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.ozw_network_status
+    to: 'off'
+  action:
+  - service: homeassistant.turn_off
+    entity_id: input_boolean.allow_automation_execution
+  id: 3826d3ce45ba4c018d11056fe8b17bdf
+- alias: open_zwave_network_up
+  initial_state: true
+  trigger:
+  - platform: homeassistant
+    event: start
+  - platform: state
+    entity_id: binary_sensor.ozw_network_status
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.ozw_network_status
+    state: 'on'
+  action:
+  - service: script.system_startup_cleanup
+  id: cdc8de9256244199bc4059e226f0174f
+- alias: Activar alarma (armado exterior)
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.pir_sala_de_tv
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.eu_z_wave_door_window_sensor_sensor
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.multisensor_6_home_security_motion_detected
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.alarma_apartamento
+    state: armed_away
+  action:
+    service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.alarma_apartamento
+  id: 85d15c62cc654166a7b7515c1ffba58f
+- alias: Activar alarma (armado interior)
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.eu_z_wave_door_window_sensor_sensor
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.alarma_apartamento
+    state: armed_home
+  action:
+    service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.alarma_apartamento
+  id: 18bd5013094741c9a56cdae6f95353a5
+- alias: Accion cuando se activa la alarma
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.alarma_apartamento
+    to: triggered
+  action:
+  - service: switch.turn_on
+    entity_id: switch.siren_switch
+  - service: notify.juan_jose
+    data:
+      title: ¡¡¡ALARMA!!!
+      message: ¡ALARMA! Acceso no autorizado al apartamento
+  - service: script.enviar_pantallazos
+  id: 72ad7790c3ad4982a0574a25feaa0a43
+- alias: Accion cuando la alarma es desarmada
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.alarma_apartamento
+    to: disarmed
+  action:
+  - service: switch.turn_off
+    entity_id: switch.siren_switch
+  - service: notify.juan_jose
+    data:
+      title: ¡Advertencia!
+      message: ¡Advertencia! La alarma se desarmó en {{ states('sensor.date_time')
+        }}
+  - service: script.enviar_pantallazos
+  id: f2c53e75733144d39d99957cea00597a
+- id: '1607958536873'
+  alias: Detener carga MacBook Pro
+  description: Detiene la carga del portatil cuando la bateria llega a más del 93
+    por ciento
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.juans_macbook_pro_internal_battery_level
+    above: '93'
+  condition:
+  - condition: state
+    entity_id: sensor.juans_macbook_pro_internal_battery_state
+    state: Charging
+  action:
+  - service: tts.google_translate_say
+    entity_id: media_player.altavoz_estudio
+    data:
+      message: Portatil MacBook Pro cargado al 93 porciento
+      language: es
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.toma_para_celular
+  mode: single
+- id: '1608236745114'
+  alias: Alerta apertura cajon
+  description: Apertura del cajón del escritorio
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.magnetico_cajon_escritorio
+    to: 'on'
+  condition: []
+  action:
+  - service: notify.juan_jose
+    data:
+      title: ¡Alerta!
+      message: ¡Alerta! el cajón del escritorio se abrió en {{ states('sensor.date_time')}}
+  - service: tts.google_translate_say
+    entity_id: media_player.altavoces_apartamento
+    data:
+      message: ¡Alerta!, ¡Alerta!, Abrieron el cajón del escritorio
+      language: es
+  mode: single
+- id: '1611007481187'
+  alias: Tag dfd97cce-5842-4c8c-9f4c-3167a9b2cf5a is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: dfd97cce-5842-4c8c-9f4c-3167a9b2cf5a
+  condition: []
+  action:
+  - service: tts.google_translate_say
+    entity_id: media_player.altavoz_estudio
+    data:
+      message: Escaneaste bien el TAG cara e chimba
+      language: es
+  mode: single
+- id: '1611067680913'
+  alias: Webhook automation example
+  description: ''
+  trigger:
+  - platform: webhook
+    webhook_id: webhook0000727
+  condition: []
+  action:
+  - service: tts.google_translate_say
+    entity_id: media_player.altavoz_estudio
+    data:
+      message: Ejecutates bien el webhook cara de chimba
+      language: es
+  mode: single

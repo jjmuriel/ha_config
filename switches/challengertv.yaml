@@ -1,0 +1,128 @@
+# TV Challenger
+  - platform: mqtt
+    name: "TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0xFDC03F"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0xFDC03F"}'
+    qos: 0
+    retain: false
+    
+  - platform: mqtt
+    name: "Silencia TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0xFDA857"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0xFDA857"}'
+    qos: 0
+    retain: false 
+    
+  - platform: mqtt
+    name: "Volumen arriba TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0xFD6897"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0xFD6897"}'
+    qos: 0
+    retain: false 
+    
+  - platform: mqtt
+    name: "Volumen abajo TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0xFD58A7"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0xFD58A7"}'
+    qos: 0
+    retain: false
+    
+  - platform: mqtt
+    name: "Fuente TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0xFD7887"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0xFD7887"}'
+    qos: 0
+    retain: false
+    
+  - platform: mqtt
+    name: "Salir TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0xFD22DD"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0xFD22DD"}'
+    qos: 0
+    retain: false
+
+  - platform: mqtt
+    name: "Arriba TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0x00FDB847"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0x00FDB847"}'
+    qos: 0
+    retain: false
+    
+  - platform: mqtt
+    name: "Abajo TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0x00FDA25D"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0x00FDA25D"}'
+    qos: 0
+    retain: false
+    
+  - platform: mqtt
+    name: "Izquierda TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0xFD02FD"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0xFD02FD"}'
+    qos: 0
+    retain: false
+    
+  - platform: mqtt
+    name: "Derecha TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0xFD42BD"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0xFD42BD"}'
+    qos: 0
+    retain: false
+    
+  - platform: mqtt
+    name: "Aceptar TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0xFD827D"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0xFD827D"}'
+    qos: 0
+    retain: false
+    
+  - platform: mqtt
+    name: "Atrás TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0x00FD708F"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0x00FD708F"}'
+    qos: 0
+    retain: false
+    
+  - platform: mqtt
+    name: "Info TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0x00FD629D"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0x00FD629D"}'
+    qos: 0
+    retain: false
+
+  - platform: mqtt
+    name: "Menu TV Estudio"
+    state_topic: "tele/IR-Hub/STATE"
+    command_topic: "cmnd/IR-Hub/IRsend"
+    payload_on: '{"Protocol":"NEC","Bits":32,"Data":"0x00FD38C7"}'
+    payload_off: '{"Protocol":"NEC","Bits":32,"Data":"0x00FD38C7"}'
+    qos: 0
+    retain: false
+
+

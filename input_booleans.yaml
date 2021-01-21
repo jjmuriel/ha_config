@@ -1,0 +1,7 @@
+allow_automation_execution:
+  name: 'Allow Automation'
+  initial: off
+
+system_ready:
+  name: 'System Ready'
+  initial: off

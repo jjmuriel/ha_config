@@ -1,0 +1,6 @@
+  - platform: lg_netcast
+    host: !secret ip_tv_salatv_lg
+    name: "TV Sala de TV"
+    access_token: !secret netcast_token
+    # turn_on_action:
+    #   service: script.1583526507780

@@ -1,0 +1,33 @@
+{
+    "version": 1,
+    "key": "lovelace_resources",
+    "data": {
+        "items": [
+            {
+                "url": "/hacsfiles/lovelace-auto-entities/auto-entities.js",
+                "type": "module",
+                "id": "b4a2f395d7354fd8a15f6ee80e2194d9"
+            },
+            {
+                "url": "/hacsfiles/lovelace-card-tools/card-tools.js",
+                "type": "module",
+                "id": "868bf13b397348d5b6e924ccb759240e"
+            },
+            {
+                "url": "/hacsfiles/lovelace-fold-entity-row/fold-entity-row.js",
+                "type": "module",
+                "id": "88360f66275e45c2975ca0fe38afd65a"
+            },
+            {
+                "url": "/hacsfiles/kiosk-mode/kiosk-mode.js",
+                "type": "module",
+                "id": "4330089de8ae4ed1bd336131d9b20f0d"
+            },
+            {
+                "url": "/hacsfiles/ozw-network-visualization-card/ozw-network-visualization-card.js",
+                "type": "module",
+                "id": "5e3f8a0251a541638de12143cd89a9a3"
+            }
+        ]
+    }
+}

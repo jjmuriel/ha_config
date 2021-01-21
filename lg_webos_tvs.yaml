@@ -1,0 +1,18 @@
+  - host: !secret ip_tv_sala_lg
+    name: TV Salacomedor
+  #other settings
+    turn_on_action:
+      service: wake_on_lan.send_magic_packet
+      data:
+        mac: !secret mac_tv_sala_lg
+        broadcast_address: 192.168.1.255
+        broadcast_port: 9
+  - host: !secret ip_tv_cuarto_lg
+    name: TV Cuarto
+    #other settings
+    turn_on_action:
+      service: wake_on_lan.send_magic_packet
+      data:
+        mac: !secret mac_tv_cuarto_lg
+        broadcast_address: 192.168.1.255
+        broadcast_port: 9

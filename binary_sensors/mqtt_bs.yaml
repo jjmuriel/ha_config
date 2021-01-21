@@ -1,0 +1,25 @@
+
+  - platform: mqtt
+    state_topic: "tele/bridgerf/RESULT"
+    name: 'PIR Sala de TV'
+    value_template: "{{value_json.RfReceived.Data}}"
+    payload_on: 'E572FE'
+    payload_off: 'E572FEoff'
+    device_class: motion
+#    optimistic: false
+    qos: 1
+    off_delay: 5
+#    retain: false
+
+# Sensor magnético
+  - platform: mqtt
+    name: 'Magnetico Cajón Escritorio'
+    state_topic: "tele/bridgerf/RESULT"
+    value_template: "{{value_json.RfReceived.Data}}"
+    payload_on: "AA14A1"
+    payload_off: "AA14A1off"
+    device_class: opening
+#    optimistic: false
+    qos: 1
+    off_delay: 5
+#    retain: false

@@ -1,0 +1,29 @@
+  tronco_de_la_felicidad:
+    sensors:
+      moisture: sensor.tronco_de_la_felicidad_humedad
+      temperature: sensor.tronco_de_la_felicidad_temperatura
+      conductivity: sensor.tronco_de_la_felicidad_fertilidad
+      brightness: sensor.tronco_de_la_felicidad_iluminacion
+    min_moisture: 15
+    max_moisture: 60
+    min_conductivity: 200
+    max_conductivity: 1500
+    min_temperature: 10
+    max_temperature: 35
+    min_brightness: 2000
+    max_brightness: 50000
+
+  cactus:
+    sensors:
+      moisture: sensor.cactus_humedad
+      temperature: sensor.cactus_temperatura
+      conductivity: sensor.cactus_fertilidad
+      brightness: sensor.cactus_iluminacion
+    min_moisture: 7
+    max_moisture: 50
+    min_conductivity: 100
+    max_conductivity: 1000
+    min_temperature: 5
+    max_temperature: 35
+    min_brightness: 3000
+    max_brightness: 100000

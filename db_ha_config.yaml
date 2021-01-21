@@ -1,0 +1,10 @@
+  purge_keep_days: 15
+  #  purge_interval: 1  deprecated
+  include:
+    domains:
+      - sensor
+      - binary_sensor
+  exclude:
+    entities:
+      - sensor.aeon_labs_zw100_multisensor_6_ultraviolet
+
